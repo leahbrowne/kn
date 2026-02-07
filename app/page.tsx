@@ -96,40 +96,54 @@ export default function Home() {
   }, []);
 
   const content = heroContent[visitorType];
+  const heroTitle = "Say 'I Do' in Paradise";
+  const heroSubtitle =
+    'Create unforgettable moments in the Caribbean’s most romantic setting';
 
   return (
-    <main className="bg-gradient-to-br from-primary to-accent px-6 py-16 text-white">
-      <section className="mx-auto flex w-full max-w-5xl flex-col gap-10">
-        <div className="max-w-3xl rounded-[32px] bg-slate-950/70 p-10 shadow-2xl shadow-slate-900/40">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-secondary">
-            Mock Welcome
+    <main className="text-white">
+      <section
+        className="relative flex min-h-[85vh] items-center overflow-hidden"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2400&q=80')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-900/60 to-slate-900/10" />
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 py-20 lg:px-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-white/80">
+            Caribbean Romance
           </p>
-          <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
-            {content.title}
+          <h1 className="max-w-3xl text-5xl font-semibold leading-tight sm:text-6xl lg:text-7xl">
+            {heroTitle}
           </h1>
-          <p className="mt-5 text-lg leading-relaxed text-white/80">
-            {content.subtitle}
+          <p className="max-w-2xl text-lg leading-relaxed text-white/80 sm:text-xl">
+            {heroSubtitle}
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-4 flex flex-wrap gap-4">
             <a
-              className="rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-secondary/30 transition hover:-translate-y-0.5"
+              className="rounded-full bg-white/20 px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(15,23,42,0.25)] backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white/30"
               href="#"
             >
-              {content.cta}
+              Explore Experiences
             </a>
             <a
-              className="rounded-full border-2 border-white/80 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              className="rounded-full border border-white/40 bg-white/10 px-7 py-3 text-sm font-semibold text-white/90 shadow-[0_10px_30px_rgba(15,23,42,0.2)] backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white/20"
               href="#"
             >
-              View Experiences
+              Plan My Trip
             </a>
           </div>
         </div>
-        <div className="grid gap-6 text-slate-900 sm:grid-cols-3">
+      </section>
+      <section className="bg-white px-6 py-16 text-slate-900">
+        <div className="mx-auto grid w-full max-w-5xl gap-6 sm:grid-cols-3">
           {content.features.map((item) => (
             <div
               key={item.title}
-              className="rounded-2xl bg-white/90 p-6 shadow-lg shadow-slate-900/10"
+              className="rounded-2xl bg-white p-6 shadow-lg shadow-slate-900/10"
             >
               <h3 className="text-lg font-semibold">{item.title}</h3>
               <p className="mt-2 text-sm text-slate-600">{item.description}</p>
