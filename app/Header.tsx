@@ -29,21 +29,13 @@ export default function Header() {
   return (
     <header className={`site-header ${isScrolled ? "header-solid" : ""}`}>
       <div className="mx-auto flex h-20 w-full max-w-[1320px] items-center justify-between px-6 lg:px-10">
-        <div className="flex items-center gap-3">
+        <a className="flex items-center gap-3" href="/">
           <img
-            alt="St Kitts"
+            alt="St Kitts Tourism"
             className="h-10 w-10"
-            src={isScrolled ? "/brand/logo-color.svg" : "/brand/logo-light.svg"}
+            src={isScrolled ? "/brand/logo.svg" : "/brand/logo-color.svg"}
           />
-          <div className="leading-tight">
-            <p className="font-serif text-lg font-semibold tracking-wide">
-              St Kitts
-            </p>
-            <p className="text-xs uppercase tracking-[0.2em]">
-              Tourism
-            </p>
-          </div>
-        </div>
+        </a>
 
         <div className="flex items-center gap-3 lg:hidden">
           <a className="header-ghost-button px-4 py-2 text-xs" href="/discover">
