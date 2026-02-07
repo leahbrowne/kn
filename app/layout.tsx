@@ -25,10 +25,11 @@ export const viewport = {
 };
 
 const navLinks = [
-  { label: "Discover", href: "#" },
-  { label: "Things to Do", href: "#" },
+  { label: "About", href: "/about" },
+  { label: "Things to Do", href: "/things-to-do/attractions" },
   { label: "Plan Your Trip", href: "/plan-your-trip" },
-  { label: "Events", href: "#" },
+  { label: "Stay", href: "/stay" },
+  { label: "Events", href: "/things-to-do/events" },
 ];
 
 export default function RootLayout({ children }: { children: ReactNode }) {
