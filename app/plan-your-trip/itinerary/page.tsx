@@ -106,7 +106,7 @@ export default function ItineraryPage() {
                 Try the interactive trip planner to generate a full day-by-day plan and save it for later.
               </p>
               <a
-                className="mt-4 inline-flex rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white"
+                className="button-base button-primary mt-4 inline-flex px-4 text-xs"
                 href="/plan-your-trip"
               >
                 Launch trip planner

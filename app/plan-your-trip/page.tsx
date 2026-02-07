@@ -324,7 +324,7 @@ export default function PlanYourTripPage() {
                           </p>
                           <div className="flex flex-wrap gap-3 pt-2">
                             <button
-                              className="rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white"
+                              className="button-base button-primary px-4 text-xs"
                               onClick={() => {
                                 saveItinerary(message.itinerary);
                                 setSavedTitles((prev) =>
@@ -340,7 +340,7 @@ export default function PlanYourTripPage() {
                                 : 'Save Itinerary'}
                             </button>
                             <button
-                              className="rounded-full border border-slate-200 px-4 py-2 text-xs font-semibold text-slate-700"
+                              className="button-base button-secondary px-4 text-xs"
                               onClick={async () => {
                                 await shareItinerary(message.itinerary);
                               }}
@@ -434,7 +434,7 @@ export default function PlanYourTripPage() {
                     value={input}
                   />
                   <button
-                    className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white"
+                    className="button-base button-primary px-5 text-sm"
                     type="submit"
                   >
                     Send
@@ -502,7 +502,7 @@ export default function PlanYourTripPage() {
                 {activePersona.prompts.map((prompt) => (
                   <button
                     key={prompt}
-                    className="rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm text-slate-700 hover:border-primary hover:text-primary"
+                    className="button-base button-secondary w-full justify-start px-4 text-left text-sm"
                     onClick={() => handleSend(prompt)}
                     type="button"
                   >

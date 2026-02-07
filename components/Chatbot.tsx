@@ -62,7 +62,7 @@ export default function Chatbot() {
               <p className="text-xs text-slate-300">Mock responses • Phase 3</p>
             </div>
             <button
-              className="text-xs font-semibold text-slate-300 hover:text-white"
+              className="button-link text-xs text-slate-300 hover:text-white"
               onClick={() => setIsOpen(false)}
               type="button"
             >
@@ -111,7 +111,7 @@ export default function Chatbot() {
               {quickActions.map((action) => (
                 <button
                   key={action.label}
-                  className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-700 hover:border-primary hover:text-primary"
+                  className="button-base button-secondary px-3 text-xs font-semibold"
                   onClick={() => handleSend(action.prompt)}
                   type="button"
                 >
@@ -134,7 +134,7 @@ export default function Chatbot() {
                 value={input}
               />
               <button
-                className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary/90"
+                className="button-base button-primary px-4 text-sm"
                 type="submit"
               >
                 Send
@@ -145,7 +145,7 @@ export default function Chatbot() {
       )}
 
       <button
-        className="flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition hover:-translate-y-0.5"
+        className="button-base button-primary gap-2 px-5 text-sm"
         onClick={() => setIsOpen((prev) => !prev)}
         type="button"
       >
