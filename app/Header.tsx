@@ -1,52 +1,59 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   { label: "Explore", href: "/things-to-do/attractions" },
   { label: "Stay", href: "/stay" },
   { label: "Eat & Drink", href: "/things-to-do/restaurants" },
-  { label: "Plan", href: "/plan-your-trip" },
   { label: "Stories", href: "/stories" },
+  { label: "Plan", href: "/plan-your-trip" },
 ];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const handleNavClick = () => setIsMenuOpen(false);
 
+  useEffect(() => {
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
+    <header className={`site-header ${isScrolled ? "header-solid" : ""}`}>
+      <div className="mx-auto flex h-20 w-full max-w-[1320px] items-center justify-between px-6 lg:px-10">
         <div className="flex items-center gap-3">
-          <span
-            aria-hidden="true"
-            className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary text-lg font-semibold text-white"
-          >
-            SK
-          </span>
-          <div>
-            <p className="text-lg font-semibold text-slate-900">
-              St Kitts Tourism
+          <img
+            alt="St Kitts"
+            className="h-10 w-10"
+            src={isScrolled ? "/brand/logo-color.svg" : "/brand/logo-light.svg"}
+          />
+          <div className="leading-tight">
+            <p className="font-serif text-lg font-semibold tracking-wide">
+              St Kitts
             </p>
-            <p className="text-xs text-slate-500 sm:text-sm">
-              Island escapes, curated for you.
+            <p className="text-xs uppercase tracking-[0.2em]">
+              Tourism
             </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-3 sm:hidden">
-          <a
-            className="rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-primary/30"
-            href="/plan-your-trip"
-          >
-            Trip Planner
+        <div className="flex items-center gap-3 lg:hidden">
+          <a className="header-ghost-button px-4 py-2 text-xs" href="/discover">
+            Discover
           </a>
           <button
             aria-controls="mobile-navigation"
             aria-expanded={isMenuOpen}
             aria-label="Toggle navigation menu"
-            className="rounded-full border border-slate-200 p-2 text-slate-700 transition hover:border-primary hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            className="header-icon-button"
             onClick={() => setIsMenuOpen((prev) => !prev)}
             type="button"
           >
@@ -54,53 +61,39 @@ export default function Header() {
           </button>
         </div>
 
-        <div className="hidden items-center gap-6 sm:flex">
+        <div className="hidden flex-1 items-center justify-center lg:flex">
           <nav aria-label="Primary">
-            <ul className="flex flex-wrap items-center gap-6 text-sm font-medium text-slate-700">
+            <ul className="flex flex-wrap items-center gap-8 text-sm font-semibold tracking-wide">
               {navLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    className="transition hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-                    href={link.href}
-                  >
+                  <a className="header-nav-link" href={link.href}>
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
           </nav>
-          <div className="flex items-center gap-3">
-            <a
-              className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-primary/30"
-              href="/plan-your-trip"
-            >
-              Trip Planner
-            </a>
-            <a
-              className="rounded-full border border-primary px-5 py-2 text-sm font-semibold text-primary transition hover:bg-primary/10"
-              href="/stay"
-            >
-              Book Now
-            </a>
-          </div>
+        </div>
+
+        <div className="hidden items-center justify-end gap-3 lg:flex">
+          <a className="header-ghost-button" href="/discover">
+            Discover
+          </a>
+          <a className="header-ghost-button" href="/stay">
+            View Stays
+          </a>
         </div>
       </div>
 
       <div
-        className={`border-t border-slate-200 bg-white sm:hidden ${
-          isMenuOpen ? "block" : "hidden"
-        }`}
+        className={`mobile-nav ${isMenuOpen ? "block" : "hidden"} lg:hidden`}
         id="mobile-navigation"
       >
         <nav aria-label="Primary mobile" className="px-6 py-4">
-          <ul className="flex flex-col gap-4 text-sm font-medium text-slate-700">
+          <ul className="flex flex-col gap-4 text-sm font-semibold">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <a
-                  className="transition hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-                  href={link.href}
-                  onClick={handleNavClick}
-                >
+                <a className="header-nav-link" href={link.href} onClick={handleNavClick}>
                   {link.label}
                 </a>
               </li>
@@ -108,11 +101,11 @@ export default function Header() {
           </ul>
           <div className="mt-5 flex flex-col gap-3">
             <a
-              className="rounded-full border border-primary px-4 py-2 text-center text-sm font-semibold text-primary transition hover:bg-primary/10"
+              className="header-ghost-button text-center"
               href="/stay"
               onClick={handleNavClick}
             >
-              Book Now
+              View Stays
             </a>
           </div>
         </nav>
