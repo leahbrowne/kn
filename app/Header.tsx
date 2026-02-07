@@ -37,10 +37,10 @@ export default function Header() {
 
         <div className="flex items-center gap-3 sm:hidden">
           <a
-            className="rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-primary/30 transition hover:-translate-y-0.5"
+            className="rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-primary/30"
             href="/plan-your-trip"
           >
-            Trip Planner (AI)
+            Trip Planner
           </a>
           <button
             aria-controls="mobile-navigation"
@@ -71,10 +71,10 @@ export default function Header() {
           </nav>
           <div className="flex items-center gap-3">
             <a
-              className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition hover:-translate-y-0.5"
+              className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-primary/30"
               href="/plan-your-trip"
             >
-              Trip Planner (AI)
+              Trip Planner
             </a>
             <a
               className="rounded-full border border-primary px-5 py-2 text-sm font-semibold text-primary transition hover:bg-primary/10"
