@@ -2,9 +2,15 @@ import "./globals.css";
 
 import type { ReactNode } from "react";
 
+import Chatbot from "../components/Chatbot";
 import ViewAsSelector from "./ViewAsSelector";
 
-const navLinks = ["Discover", "Things to Do", "Plan Your Trip", "Events"];
+const navLinks = [
+  { label: "Discover", href: "#" },
+  { label: "Things to Do", href: "#" },
+  { label: "Plan Your Trip", href: "/plan-your-trip" },
+  { label: "Events", href: "#" },
+];
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -32,13 +38,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <div className="flex flex-col gap-4 sm:ml-auto sm:flex-row sm:items-center">
                 <nav aria-label="Primary">
                   <ul className="flex flex-wrap gap-4 text-sm font-medium text-slate-700">
-                    {navLinks.map((label) => (
-                      <li key={label}>
+                    {navLinks.map((link) => (
+                      <li key={link.label}>
                         <a
                           className="transition hover:text-primary"
-                          href="#"
+                          href={link.href}
                         >
-                          {label}
+                          {link.label}
                         </a>
                       </li>
                     ))}
@@ -58,6 +64,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </div>
           </footer>
         </div>
+        <Chatbot />
       </body>
     </html>
   );
