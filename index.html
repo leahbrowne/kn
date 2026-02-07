@@ -7,43 +7,103 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="shell">
-      <header class="hero">
-        <p class="eyebrow">St Kitts Tourism Authority</p>
-        <h1>St Kitts Tourism PWA Demo</h1>
-        <p class="lede">
-          Skeleton deployment for the upcoming modernization demo. This placeholder
-          validates the Vercel pipeline while the full Next.js experience is built.
-        </p>
-        <div class="cta-row">
-          <button class="primary">View As: First-Time Visitor</button>
-          <button class="ghost">Trip Planner (Coming Soon)</button>
+    <main class="shell personalization" id="personalizationRoot">
+      <header class="top-bar">
+        <div class="brand">
+          <p class="eyebrow">St Kitts Tourism Authority</p>
+          <h1>St Kitts, Yours to Explore</h1>
+        </div>
+        <div class="view-as">
+          <label for="visitorType">View As</label>
+          <select id="visitorType">
+            <option value="first-time">First-Time Visitor</option>
+            <option value="cruise">Cruise Visitor</option>
+            <option value="returning">Returning Visitor</option>
+            <option value="romance">Romance Seeker</option>
+          </select>
         </div>
       </header>
 
-      <section class="card-grid">
-        <article class="card">
-          <h2>Personalized Hero</h2>
-          <p>Hero copy and imagery will adapt to visitor segments.</p>
-        </article>
-        <article class="card">
-          <h2>AI Trip Planner</h2>
-          <p>Conversational itinerary builder powered by Claude.</p>
-        </article>
-        <article class="card">
-          <h2>Insights Dashboard</h2>
-          <p>First-party data summaries for tourism stakeholders.</p>
-        </article>
+      <section class="hero fade-target" id="heroSection">
+        <div class="hero-media" id="heroMedia">
+          <img id="heroImage" alt="" />
+        </div>
+        <div class="hero-content">
+          <p class="eyebrow">Personalized just for you</p>
+          <h2 id="heroTitle">Discover Your Caribbean Paradise</h2>
+          <p class="lede" id="heroCopy">
+            Let St Kitts sweep you away with lush rainforests, volcanic peaks, and
+            turquoise shores crafted for unforgettable first moments.
+          </p>
+          <div class="cta-row">
+            <button class="primary" id="heroCta">Start Planning Your Adventure</button>
+            <button class="ghost">Explore Island Guide</button>
+          </div>
+          <div class="hero-highlights" id="heroHighlights"></div>
+        </div>
       </section>
 
-      <section class="status">
-        <h2>Deployment Status</h2>
-        <ul>
-          <li>✅ Static shell ready for Vercel</li>
-          <li>⬜ Next.js App Router build pending</li>
-          <li>⬜ PWA service worker pending</li>
-        </ul>
+      <section class="personalized fade-target">
+        <div class="section-header">
+          <h3 id="personalizedTitle">Why St Kitts</h3>
+          <p id="personalizedCopy">
+            Sun-drenched beaches, soulful culture, and a heartbeat of adventure
+            await. Let your story begin here.
+          </p>
+        </div>
+        <div class="card-grid" id="personalizedCards"></div>
+      </section>
+
+      <section class="featured fade-target">
+        <div class="section-header">
+          <h3>Featured Attractions</h3>
+          <p>Signature experiences to put on every St Kitts itinerary.</p>
+        </div>
+        <div class="featured-grid">
+          <article class="featured-card">
+            <img
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+              alt="Turquoise Caribbean waters"
+            />
+            <div>
+              <h4>Frigate Bay Beach</h4>
+              <p>Powdery sand, beach bars, and golden sunsets on the peninsula.</p>
+            </div>
+          </article>
+          <article class="featured-card">
+            <img
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"
+              alt="Lush tropical rainforest"
+            />
+            <div>
+              <h4>Rainforest Hikes</h4>
+              <p>Misty trails, hidden waterfalls, and volcanic views.</p>
+            </div>
+          </article>
+          <article class="featured-card">
+            <img
+              src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=800&q=80"
+              alt="Historic fort overlooking the ocean"
+            />
+            <div>
+              <h4>Brimstone Hill Fortress</h4>
+              <p>A UNESCO World Heritage site with sweeping coastal panoramas.</p>
+            </div>
+          </article>
+          <article class="featured-card">
+            <img
+              src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80"
+              alt="Couple enjoying a coastal lookout"
+            />
+            <div>
+              <h4>Scenic Lookouts</h4>
+              <p>Capture the island from panoramic overlooks and cliffside points.</p>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
+
+    <script src="lib/personalization.js"></script>
   </body>
 </html>
