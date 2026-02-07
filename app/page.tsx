@@ -222,49 +222,6 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-slate-950 px-6 py-16 text-slate-400 sm:px-10 lg:px-16">
-        <div className="mx-auto grid w-full max-w-[1200px] gap-10 text-sm md:grid-cols-4">
-          <div>
-            <p className="mb-4 text-xs uppercase tracking-[0.3em] text-slate-500">
-              St Kitts
-            </p>
-            <p className="leading-relaxed text-slate-500">
-              A calm escape for celebrations, retreats, and storied seaside
-              stays.
-            </p>
-          </div>
-          <div>
-            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-slate-500">
-              Discover
-            </p>
-            <ul className="space-y-2">
-              <li>Experiences</li>
-              <li>Stays</li>
-              <li>Weddings</li>
-            </ul>
-          </div>
-          <div>
-            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-slate-500">
-              Plan
-            </p>
-            <ul className="space-y-2">
-              <li>Start Planning</li>
-              <li>Getting Here</li>
-              <li>Contact</li>
-            </ul>
-          </div>
-          <div>
-            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-slate-500">
-              Follow
-            </p>
-            <ul className="space-y-2">
-              <li>Instagram</li>
-              <li>Journal</li>
-              <li>Newsletter</li>
-            </ul>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }
