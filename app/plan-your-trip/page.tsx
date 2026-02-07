@@ -325,6 +325,7 @@ export default function PlanYourTripPage() {
                           <div className="flex flex-wrap gap-3 pt-2">
                             <button
                               className="button-base button-primary px-4 text-xs"
+                              className="inline-flex h-[46px] items-center justify-center rounded-[10px] bg-primary px-4 text-xs font-semibold text-white shadow-sm transition hover:bg-primary-dark"
                               onClick={() => {
                                 saveItinerary(message.itinerary);
                                 setSavedTitles((prev) =>
@@ -341,6 +342,7 @@ export default function PlanYourTripPage() {
                             </button>
                             <button
                               className="button-base button-secondary px-4 text-xs"
+                              className="inline-flex h-[46px] items-center justify-center rounded-[10px] border border-primary bg-transparent px-4 text-xs font-semibold text-primary hover:bg-primary/10"
                               onClick={async () => {
                                 await shareItinerary(message.itinerary);
                               }}
@@ -435,6 +437,7 @@ export default function PlanYourTripPage() {
                   />
                   <button
                     className="button-base button-primary px-5 text-sm"
+                    className="inline-flex h-[46px] items-center justify-center rounded-[10px] bg-primary px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-dark"
                     type="submit"
                   >
                     Send
@@ -503,6 +506,7 @@ export default function PlanYourTripPage() {
                   <button
                     key={prompt}
                     className="button-base button-secondary w-full justify-start px-4 text-left text-sm"
+                    className="rounded-[10px] border border-primary px-4 py-3 text-left text-sm text-primary hover:bg-primary/10"
                     onClick={() => handleSend(prompt)}
                     type="button"
                   >

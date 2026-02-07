@@ -1,6 +1,6 @@
 :root {
   color-scheme: light;
-  --primary: #00a3e0;
+  --primary: #4a521c;
   --secondary: #fdb913;
   --accent: #00b140;
   --neutral-900: #1a1a1a;
@@ -19,7 +19,7 @@
 
 body {
   font-family: "Inter", "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, rgba(0, 163, 224, 0.16), rgba(0, 177, 64, 0.12));
+  background: linear-gradient(135deg, rgba(248, 244, 239, 0.95), rgba(232, 228, 220, 0.95));
   color: var(--neutral-900);
   min-height: 100vh;
 }
@@ -173,7 +173,7 @@ button.ghost {
 .pill {
   padding: 0.4rem 0.85rem;
   border-radius: 999px;
-  background: rgba(0, 163, 224, 0.12);
+  background: rgba(120, 110, 95, 0.18);
   color: var(--neutral-900);
   font-size: 0.85rem;
   font-weight: 600;

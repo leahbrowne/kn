@@ -1,9 +1,9 @@
 export default function TripPlannerHighlight() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 px-6 py-24 text-white">
+    <section className="relative overflow-hidden bg-gradient-to-br from-stone-950 via-neutral-900 to-stone-900 px-6 py-24 text-white">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-cyan-500/25 blur-3xl" />
-        <div className="absolute -right-16 bottom-0 h-80 w-80 rounded-full bg-indigo-500/25 blur-3xl" />
+        <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-amber-900/20 blur-3xl" />
+        <div className="absolute -right-16 bottom-0 h-80 w-80 rounded-full bg-emerald-900/20 blur-3xl" />
         <div className="absolute right-10 top-4 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
       </div>
       <div className="relative mx-auto grid w-full max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
@@ -27,7 +27,7 @@ export default function TripPlannerHighlight() {
           </div>
         </div>
         <div className="relative">
-          <div className="absolute -top-6 left-10 h-16 w-16 rounded-full bg-cyan-400/30 blur-2xl" />
+          <div className="absolute -top-6 left-10 h-16 w-16 rounded-full bg-amber-900/25 blur-2xl" />
           <div className="rounded-[2rem] border border-white/10 bg-white/10 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.55)] backdrop-blur-xl">
             <div className="flex items-center justify-between text-xs text-white/50">
               <span>AI Trip Planner</span>
@@ -40,14 +40,14 @@ export default function TripPlannerHighlight() {
                 Looking for a 4-day escape with beaches, snorkeling, and a sunset
                 cruise.
               </div>
-              <div className="ml-auto w-11/12 rounded-2xl bg-gradient-to-br from-cyan-400/25 via-indigo-400/25 to-white/10 p-4">
+              <div className="ml-auto w-11/12 rounded-2xl bg-gradient-to-br from-amber-200/20 via-stone-200/10 to-white/10 p-4">
                 Got it! Here&apos;s a curated itinerary with morning beach time,
                 midday adventures, and a candlelit dinner on day three.
               </div>
               <div className="rounded-2xl bg-white/10 p-4 backdrop-blur">
                 Add a spa afternoon and keep it relaxed.
               </div>
-              <div className="ml-auto w-11/12 rounded-2xl bg-gradient-to-br from-cyan-400/25 via-indigo-400/25 to-white/10 p-4">
+              <div className="ml-auto w-11/12 rounded-2xl bg-gradient-to-br from-amber-200/20 via-stone-200/10 to-white/10 p-4">
                 Done. I&apos;ll slot a resort spa session on day two and recommend a
                 low-key evening lounge.
               </div>
