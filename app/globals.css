@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
 }
 
 body {
