@@ -25,3 +25,82 @@ h6 {
   font-family: "Cormorant Garamond", "Times New Roman", serif;
   font-weight: 300;
 }
+
+@layer components {
+  .site-header {
+    @apply fixed left-0 top-0 z-40 w-full transition-all duration-300;
+    background: transparent;
+  }
+
+  .site-header .header-nav-link,
+  .site-header .header-ghost-button,
+  .site-header .header-icon-button,
+  .site-header p {
+    color: #fefdfb;
+  }
+
+  .site-header .header-nav-link {
+    @apply transition-colors duration-200;
+  }
+
+  .site-header .header-nav-link:hover {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .header-ghost-button {
+    @apply rounded-full border border-white/60 px-5 py-2 text-sm font-semibold uppercase tracking-[0.18em] transition-colors duration-200;
+    background: transparent;
+  }
+
+  .site-header .header-ghost-button:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .header-icon-button {
+    @apply rounded-full border border-white/50 p-2 text-sm transition-colors duration-200;
+  }
+
+  .site-header.header-solid {
+    background: #faf9f6;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  }
+
+  .site-header.header-solid .header-nav-link,
+  .site-header.header-solid .header-ghost-button,
+  .site-header.header-solid .header-icon-button,
+  .site-header.header-solid p {
+    color: #0f172a;
+  }
+
+  .site-header.header-solid .header-nav-link:hover {
+    color: rgba(15, 23, 42, 0.7);
+  }
+
+  .site-header.header-solid .header-ghost-button {
+    border-color: rgba(15, 23, 42, 0.25);
+    background: rgba(15, 23, 42, 0.05);
+  }
+
+  .site-header.header-solid .header-ghost-button:hover {
+    background: rgba(15, 23, 42, 0.12);
+  }
+
+  .site-header.header-solid .header-icon-button {
+    border-color: rgba(15, 23, 42, 0.2);
+  }
+
+  .mobile-nav {
+    background: rgba(250, 249, 246, 0.98);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+  }
+
+  .mobile-nav .header-nav-link,
+  .mobile-nav .header-ghost-button {
+    color: #0f172a;
+  }
+
+  .mobile-nav .header-ghost-button {
+    border-color: rgba(15, 23, 42, 0.25);
+    background: rgba(15, 23, 42, 0.04);
+  }
+}
