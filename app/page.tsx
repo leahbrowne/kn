@@ -1,4 +1,5 @@
 import ExperienceChips from '../components/ExperienceChips';
+import TripPlannerHighlight from '../components/TripPlannerHighlight';
 
 export default function Home() {
   const heroTitle = "Say 'I Do' in Paradise";
@@ -43,6 +44,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <TripPlannerHighlight />
       <section className="bg-white px-6 py-16 text-slate-900">
         <div className="experience-shell">
           <div className="experience-header">
