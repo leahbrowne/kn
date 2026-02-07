@@ -1,101 +1,6 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-
-const heroContent = {
-  'first-time': {
-    title: 'Discover Your Caribbean Paradise',
-    subtitle: 'Pristine beaches, rich history, and authentic island culture await',
-    cta: 'Start Planning Your Adventure',
-    features: [
-      {
-        title: 'UNESCO heritage sites',
-        description:
-          'Explore UNESCO-listed landmarks that bring St Kitts history to life.',
-      },
-      {
-        title: 'Natural beauty',
-        description: 'From rainforests to beaches, discover the island’s wild side.',
-      },
-      {
-        title: 'Authentic culture',
-        description: 'Meet locals, savor cuisine, and celebrate island traditions.',
-      },
-    ],
-  },
-  cruise: {
-    title: 'Make the Most of Your Port Day',
-    subtitle: 'Shore excursions and experiences just minutes from the port',
-    cta: 'Browse Shore Excursions',
-    features: [
-      {
-        title: 'Port proximity',
-        description: 'Top experiences are only minutes away from Port Zante.',
-      },
-      {
-        title: '4-6 hour adventures',
-        description: 'Perfect-length tours built around cruise schedules.',
-      },
-      {
-        title: 'Easy transportation',
-        description: 'Smooth transfers to beaches, culture stops, and viewpoints.',
-      },
-    ],
-  },
-  returning: {
-    title: 'Welcome Back to St Kitts',
-    subtitle: "Discover what's new since your last visit",
-    cta: "See What's New",
-    features: [
-      {
-        title: 'New openings',
-        description: 'Fresh restaurants, boutiques, and attractions to explore.',
-      },
-      {
-        title: 'Saved itineraries',
-        description: 'Pick up where you left off with your favorite plans.',
-      },
-      {
-        title: "Locals' favorites",
-        description: 'Go beyond the guidebook with insider recommendations.',
-      },
-    ],
-  },
-  romance: {
-    title: "Say 'I Do' in Paradise",
-    subtitle:
-      "Create unforgettable moments in the Caribbean's most romantic setting",
-    cta: 'Explore Wedding Venues',
-    features: [
-      {
-        title: 'Beach ceremonies',
-        description: 'Exchange vows with ocean views and soft sand underfoot.',
-      },
-      {
-        title: 'Romantic packages',
-        description: 'Tailored celebrations for proposals, weddings, and more.',
-      },
-      {
-        title: 'Honeymoon experiences',
-        description: 'Plan candlelit dinners, sunset sails, and spa escapes.',
-      },
-    ],
-  },
-};
-
-type VisitorType = keyof typeof heroContent;
+import ExperienceChips from '../components/ExperienceChips';
 
 export default function Home() {
-  const [visitorType, setVisitorType] = useState<VisitorType>('first-time');
-
-  useEffect(() => {
-    const storedType = localStorage.getItem('visitorType') as VisitorType | null;
-    if (storedType && storedType in heroContent) {
-      setVisitorType(storedType);
-    }
-  }, []);
-
-  const content = heroContent[visitorType];
   const heroTitle = "Say 'I Do' in Paradise";
   const heroSubtitle =
     'Create unforgettable moments in the Caribbean’s most romantic setting';
@@ -139,16 +44,15 @@ export default function Home() {
         </div>
       </section>
       <section className="bg-white px-6 py-16 text-slate-900">
-        <div className="mx-auto grid w-full max-w-5xl gap-6 sm:grid-cols-3">
-          {content.features.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl bg-white p-6 shadow-lg shadow-slate-900/10"
-            >
-              <h3 className="text-lg font-semibold">{item.title}</h3>
-              <p className="mt-2 text-sm text-slate-600">{item.description}</p>
-            </div>
-          ))}
+        <div className="experience-shell">
+          <div className="experience-header">
+            <p className="experience-kicker">Discover the island</p>
+            <h2>Choose your experience</h2>
+            <p className="experience-subtitle">
+              Tap into the themes that match your perfect St Kitts escape.
+            </p>
+          </div>
+          <ExperienceChips />
         </div>
       </section>
     </main>
