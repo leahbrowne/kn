@@ -1,131 +1,58 @@
+import "./globals.css";
+
 import type { ReactNode } from "react";
 
-const navLinks = ["Overview", "Features", "Pricing", "Contact"];
+const navLinks = ["Discover", "Things to Do", "Plan Your Trip", "Events"];
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <div className="page">
-          <header className="site-header">
-            <div className="brand">
-              <span className="brand-mark" aria-hidden="true">
-                ◆
-              </span>
-              <span className="brand-text">Acme Platform</span>
+      <body className="bg-slate-50 text-slate-900">
+        <div className="flex min-h-screen flex-col">
+          <header className="border-b border-slate-200 bg-white">
+            <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 py-6 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-center gap-3">
+                <span
+                  aria-hidden="true"
+                  className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary text-lg font-semibold text-white"
+                >
+                  SK
+                </span>
+                <div>
+                  <p className="text-lg font-semibold text-slate-900">
+                    St Kitts Tourism
+                  </p>
+                  <p className="text-sm text-slate-500">
+                    Island escapes, curated for you.
+                  </p>
+                </div>
+              </div>
+              <nav aria-label="Primary">
+                <ul className="flex flex-wrap gap-4 text-sm font-medium text-slate-700">
+                  {navLinks.map((label) => (
+                    <li key={label}>
+                      <a
+                        className="transition hover:text-primary"
+                        href="#"
+                      >
+                        {label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </div>
-            <nav aria-label="Primary">
-              <ul className="nav-list">
-                {navLinks.map((label) => (
-                  <li key={label}>
-                    <a className="nav-link" href="#">
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
           </header>
-          <main className="content">{children}</main>
-          <footer className="site-footer">
-            <span>© 2024 Acme Platform. Built for modern teams.</span>
+          <main className="flex-1">{children}</main>
+          <footer className="bg-slate-900">
+            <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-8 text-sm text-slate-300 sm:flex-row sm:items-center sm:justify-between">
+              <span>© 2024 St Kitts Tourism. All rights reserved.</span>
+              <span className="text-slate-400">
+                Crafted for the Phase 1 demo experience.
+              </span>
+            </div>
           </footer>
         </div>
-        <style jsx global>{`
-          :root {
-            color-scheme: light;
-            font-family: "Inter", "Segoe UI", system-ui, sans-serif;
-          }
-
-          body {
-            margin: 0;
-            background: #f8fafc;
-            color: #0f172a;
-          }
-
-          .page {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-          }
-
-          .site-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1.5rem 2.5rem;
-            background: #ffffff;
-            border-bottom: 1px solid #e2e8f0;
-            gap: 1.5rem;
-          }
-
-          .brand {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-weight: 600;
-            font-size: 1.1rem;
-          }
-
-          .brand-mark {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 2.25rem;
-            height: 2.25rem;
-            border-radius: 0.75rem;
-            background: #1e40af;
-            color: #ffffff;
-            font-size: 1rem;
-          }
-
-          .nav-list {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-          }
-
-          .nav-link {
-            text-decoration: none;
-            font-weight: 500;
-            color: #1e293b;
-          }
-
-          .nav-link:hover {
-            color: #1d4ed8;
-          }
-
-          .content {
-            flex: 1;
-            padding: 2.5rem;
-          }
-
-          .site-footer {
-            padding: 1.5rem 2.5rem;
-            background: #0f172a;
-            color: #e2e8f0;
-            text-align: center;
-          }
-
-          @media (max-width: 640px) {
-            .site-header {
-              flex-direction: column;
-              align-items: flex-start;
-              padding: 1.5rem;
-            }
-
-            .nav-list {
-              gap: 0.75rem 1.5rem;
-            }
-
-            .content {
-              padding: 1.5rem;
-            }
-          }
-        `}</style>
       </body>
     </html>
   );
