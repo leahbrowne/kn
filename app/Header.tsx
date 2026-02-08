@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Eat & Drink", href: "/things-to-do/restaurants" },
   { label: "Stories", href: "/stories" },
   { label: "Plan", href: "/plan-your-trip" },
+  { label: "Near Me", href: "/near-me" },
 ];
 
 export default function Header() {

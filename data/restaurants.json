@@ -1,0 +1,35 @@
+[
+  {
+    "id": "marshalls",
+    "name": "Marshall's",
+    "cuisine": "Caribbean classics with modern flair.",
+    "description": "Chef-driven plates highlighting fresh seafood, island spices, and an elegant waterfront dining room.",
+    "type": "fine-dining",
+    "romantic": true,
+    "popular": true,
+    "location": { "lat": 17.2975, "lng": -62.7222 }
+  },
+  {
+    "id": "vibes-beach-bar",
+    "name": "Vibes Beach Bar",
+    "cuisine": "Casual beach bites and tropical cocktails.",
+    "description": "Laid-back spot for grilled fish, rum punch, and sunset music right on the sand.",
+    "popular": true,
+    "location": { "lat": 17.2711, "lng": -62.6995 }
+  },
+  {
+    "id": "carambola-beach-club",
+    "name": "Carambola Beach Club",
+    "cuisine": "Resort dining with ocean views.",
+    "description": "Relax with mezze platters, salads, and signature cocktails under palm-shaded lounges.",
+    "location": { "lat": 17.3768, "lng": -62.8789 }
+  },
+  {
+    "id": "sunset-cafe",
+    "name": "Sunset Cafe",
+    "cuisine": "Caribbean-American fusion.",
+    "description": "Known for lobster nights, local produce, and golden hour views on the water.",
+    "popular": true,
+    "location": { "lat": 17.2959, "lng": -62.7158 }
+  }
+]
