@@ -1,0 +1,37 @@
+[
+  {
+    "id": "brimstone-hill-fortress",
+    "name": "Brimstone Hill Fortress",
+    "description": "UNESCO World Heritage fortress with panoramic views and a museum courtyard.",
+    "category": "history",
+    "location": { "lat": 17.3576, "lng": -62.8486 }
+  },
+  {
+    "id": "st-kitts-scenic-railway",
+    "name": "St Kitts Scenic Railway",
+    "description": "Open-air rail journey hugging the coastline with sugar plantation stories.",
+    "category": "culture",
+    "location": { "lat": 17.2967, "lng": -62.7251 }
+  },
+  {
+    "id": "romney-manor",
+    "name": "Romney Manor & Caribelle Batik",
+    "description": "Historic estate for batik art, gardens, and the legendary 400-year-old saman tree.",
+    "category": "gardens",
+    "location": { "lat": 17.3448, "lng": -62.8367 }
+  },
+  {
+    "id": "cockleshell-beach",
+    "name": "Cockleshell Beach",
+    "description": "Calm waters, soft sand, and iconic Nevis views.",
+    "category": "beach",
+    "location": { "lat": 17.2318, "lng": -62.6392 }
+  },
+  {
+    "id": "frigate-bay",
+    "name": "Frigate Bay",
+    "description": "Lively shoreline with restaurants, loungers, and golden sunsets.",
+    "category": "beach",
+    "location": { "lat": 17.2728, "lng": -62.6886 }
+  }
+]
