@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import { getTripPlannerResponse } from '../../lib/mock-trip-planner';
+import { useWeatherMode } from '../../lib/hooks/useWeatherMode';
 
 type PlannerMessage = {
   id: string;
@@ -118,6 +119,50 @@ const defaultPersonaContent = {
   featured: ['Signature beach clubs', 'Island heritage tour', 'Local dining crawl'],
   recommendations: ['Share your timeline', 'Tell us your must-do experiences'],
 };
+
+function WeatherModeSelector() {
+  const { mode, changeMode } = useWeatherMode();
+
+  const buttonBase =
+    'inline-flex h-[46px] items-center justify-center rounded-[10px] border border-slate-200 px-4 text-xs font-semibold text-slate-700 transition hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-60';
+
+  return (
+    <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
+      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+        Activity Preferences
+      </p>
+      <p className="mt-2 text-sm text-slate-600">
+        Choose a weather mode to tailor today&apos;s suggestions.
+      </p>
+      <div className="mt-4 flex flex-col gap-3">
+        <button
+          className={buttonBase}
+          onClick={() => changeMode('sunny')}
+          disabled={mode === 'sunny'}
+          type="button"
+        >
+          ☀️ Sunny Day (Outdoor activities)
+        </button>
+        <button
+          className={buttonBase}
+          onClick={() => changeMode('rainy')}
+          disabled={mode === 'rainy'}
+          type="button"
+        >
+          🌧️ Rainy Day (Indoor activities)
+        </button>
+        <button
+          className={buttonBase}
+          onClick={() => changeMode('auto')}
+          disabled={mode === 'auto'}
+          type="button"
+        >
+          🌤️ Auto (Balanced mix)
+        </button>
+      </div>
+    </div>
+  );
+}
 
 const getSavedItineraries = (): ItineraryTemplate[] => {
   if (typeof window === 'undefined') return [];
@@ -285,6 +330,7 @@ export default function PlanYourTripPage() {
                 </p>
               </fieldset>
             </div>
+            <WeatherModeSelector />
 
             <div className="flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
               <div className="border-b border-slate-200 bg-slate-900 px-6 py-4 text-white">
