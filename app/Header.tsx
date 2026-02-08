@@ -33,7 +33,7 @@ export default function Header() {
           <img
             alt="St Kitts Tourism"
             className="h-10 w-10"
-            src={isScrolled ? "/brand/logo.svg" : "/brand/logo-color.svg"}
+            src={isScrolled ? "/brand/logo.svg" : "/brand/logo-white.svg"}
           />
         </a>
 
