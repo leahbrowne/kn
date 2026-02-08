@@ -1,0 +1,28 @@
+[
+  {
+    "id": "cockleshell-beach",
+    "name": "Cockleshell Beach",
+    "category": "beach",
+    "location": { "lat": 17.1136, "lng": -62.6281 }
+  },
+  {
+    "id": "brimstone-hill-fortress",
+    "name": "Brimstone Hill Fortress",
+    "category": "attraction",
+    "featured": true,
+    "location": { "lat": 17.3632, "lng": -62.8399 }
+  },
+  {
+    "id": "romney-manor",
+    "name": "Romney Manor & Caribelle Batik",
+    "category": "attraction",
+    "quickVisit": true,
+    "location": { "lat": 17.3285, "lng": -62.8024 }
+  },
+  {
+    "id": "frigate-bay-beach",
+    "name": "Frigate Bay",
+    "category": "beach",
+    "location": { "lat": 17.2776, "lng": -62.7006 }
+  }
+]
