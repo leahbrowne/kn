@@ -32,7 +32,7 @@ export default function Header() {
         <a className="flex items-center gap-3" href="/">
           <img
             alt="St Kitts Tourism"
-            className="h-10 w-10"
+            className="h-[44px] w-auto"
             src={isScrolled ? "/brand/logo.svg" : "/brand/logo-white.svg"}
           />
         </a>
