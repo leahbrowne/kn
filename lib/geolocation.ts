@@ -1,28 +1,12 @@
-export interface Location {
+export interface UserLocation {
   lat: number;
   lng: number;
 }
 
-export async function getUserLocation(): Promise<Location | null> {
-  return new Promise((resolve) => {
-    if (!navigator.geolocation) {
-      resolve(null);
-      return;
-    }
+const EARTH_RADIUS_KM = 6371;
 
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        resolve({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        });
-      },
-      (error) => {
-        console.error("Location error:", error);
-        resolve(null);
-      }
-    );
-  });
+function toRadians(value: number) {
+  return (value * Math.PI) / 180;
 }
 
 export function calculateDistance(
@@ -30,49 +14,36 @@ export function calculateDistance(
   lng1: number,
   lat2: number,
   lng2: number
-): number {
-  const R = 6371;
-  const dLat = toRad(lat2 - lat1);
-  const dLng = toRad(lng2 - lng1);
+) {
+  const deltaLat = toRadians(lat2 - lat1);
+  const deltaLng = toRadians(lng2 - lng1);
+  const startLat = toRadians(lat1);
+  const endLat = toRadians(lat2);
 
   const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(toRad(lat1)) *
-      Math.cos(toRad(lat2)) *
-      Math.sin(dLng / 2) *
-      Math.sin(dLng / 2);
-
+    Math.sin(deltaLat / 2) * Math.sin(deltaLat / 2) +
+    Math.cos(startLat) * Math.cos(endLat) *
+      Math.sin(deltaLng / 2) * Math.sin(deltaLng / 2);
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  const distance = R * c;
 
-  return Math.round(distance * 10) / 10;
+  return Number((EARTH_RADIUS_KM * c).toFixed(1));
 }
 
-function toRad(degrees: number): number {
-  return degrees * (Math.PI / 180);
-}
+export async function getUserLocation(): Promise<UserLocation | null> {
+  if (typeof navigator === 'undefined' || !('geolocation' in navigator)) {
+    return null;
+  }
 
-export function estimateWalkingTime(distanceKm: number): string {
-  const minutes = Math.round((distanceKm / 5) * 60);
-
-  if (minutes < 5) return "Less than 5 min walk";
-  if (minutes < 60) return `${minutes} min walk`;
-
-  const hrs = Math.floor(minutes / 60);
-  const mins = minutes % 60;
-  return `${hrs}h ${mins}m walk`;
-}
-
-export function sortByDistance(places: any[], userLocation: Location): any[] {
-  return places
-    .map((place) => ({
-      ...place,
-      distance: calculateDistance(
-        userLocation.lat,
-        userLocation.lng,
-        place.location.lat,
-        place.location.lng
-      ),
-    }))
-    .sort((a, b) => a.distance - b.distance);
+  return new Promise((resolve) => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        resolve({
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        });
+      },
+      () => resolve(null),
+      { timeout: 5000 }
+    );
+  });
 }

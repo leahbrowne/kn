@@ -2,36 +2,34 @@
   {
     "id": "marshalls",
     "name": "Marshall's",
+    "cuisine": "Caribbean classics with modern flair.",
     "description": "Chef-driven plates highlighting fresh seafood, island spices, and an elegant waterfront dining room.",
-    "category": "restaurant",
-    "location": { "lat": 17.2941, "lng": -62.7207 }
+    "type": "fine-dining",
+    "romantic": true,
+    "popular": true,
+    "location": { "lat": 17.2975, "lng": -62.7222 }
   },
   {
     "id": "vibes-beach-bar",
     "name": "Vibes Beach Bar",
+    "cuisine": "Casual beach bites and tropical cocktails.",
     "description": "Laid-back spot for grilled fish, rum punch, and sunset music right on the sand.",
-    "category": "beach",
-    "location": { "lat": 17.2739, "lng": -62.6879 }
+    "popular": true,
+    "location": { "lat": 17.2711, "lng": -62.6995 }
   },
   {
     "id": "carambola-beach-club",
     "name": "Carambola Beach Club",
-    "description": "Resort dining with ocean views and palm-shaded lounges.",
-    "category": "restaurant",
-    "location": { "lat": 17.4035, "lng": -62.8362 }
+    "cuisine": "Resort dining with ocean views.",
+    "description": "Relax with mezze platters, salads, and signature cocktails under palm-shaded lounges.",
+    "location": { "lat": 17.3768, "lng": -62.8789 }
   },
   {
     "id": "sunset-cafe",
     "name": "Sunset Cafe",
+    "cuisine": "Caribbean-American fusion.",
     "description": "Known for lobster nights, local produce, and golden hour views on the water.",
-    "category": "restaurant",
-    "location": { "lat": 17.3022, "lng": -62.7168 }
-  },
-  {
-    "id": "fishermans-village",
-    "name": "Fisherman's Village",
-    "description": "Grab grilled snapper, conch fritters, and island sides straight from the harbor.",
-    "category": "restaurant",
-    "location": { "lat": 17.2993, "lng": -62.7257 }
+    "popular": true,
+    "location": { "lat": 17.2959, "lng": -62.7158 }
   }
 ]
