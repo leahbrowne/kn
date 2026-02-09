@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getTodaysSuggestions, type Suggestion } from '../suggestions-engine'
 import { getUserLocation } from '../geolocation'
+import type { WeatherMode } from './useWeatherMode'
 
 export function useTodaysSuggestions(attractions: any[], restaurants: any[]) {
   const [suggestions, setSuggestions] = useState<Suggestion[]>([])
@@ -18,13 +19,20 @@ export function useTodaysSuggestions(attractions: any[], restaurants: any[]) {
     setLoading(true)
 
     const userLocation = await getUserLocation()
-    const visitorType = localStorage.getItem('visitorType') || 'first-time'
+    const visitorType =
+      (typeof window !== 'undefined' && localStorage.getItem('visitorType')) ||
+      'first-time'
+    const weatherMode: WeatherMode =
+      (typeof window !== 'undefined' &&
+        (localStorage.getItem('weatherMode') as WeatherMode | null)) ||
+      'auto'
     const currentHour = new Date().getHours()
 
     const suggested = getTodaysSuggestions(
       currentHour,
       userLocation,
       visitorType,
+      weatherMode,
       attractions,
       restaurants
     )
