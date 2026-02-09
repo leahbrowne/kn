@@ -90,7 +90,7 @@ export default function FaqPage() {
                 ].map((link) => (
                   <a
                     key={link.label}
-                    className="rounded-full border border-slate-200 px-4 py-2 text-center text-xs font-semibold text-slate-700 transition hover:border-primary hover:text-primary"
+                    className="button-base button-secondary text-center text-xs"
                     href={link.href}
                   >
                     {link.label}

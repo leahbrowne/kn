@@ -50,7 +50,7 @@ export default function Header() {
         </a>
 
         <div className="flex items-center gap-3 lg:hidden">
-          <a className="header-ghost-button px-4 py-2 text-xs" href="/discover">
+          <a className="header-ghost-button text-xs" href="/discover">
             Discover
           </a>
           <button

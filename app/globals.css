@@ -48,7 +48,7 @@ h6 {
   }
 
   .header-ghost-button {
-    @apply rounded-full border border-white/60 px-5 py-2 text-sm font-semibold uppercase tracking-[0.18em] transition-colors duration-200;
+    @apply inline-flex h-11 items-center justify-center rounded-[10px] border border-white/60 px-5 text-sm font-semibold uppercase tracking-[0.18em] transition-colors duration-200;
     background: transparent;
   }
 
@@ -57,7 +57,7 @@ h6 {
   }
 
   .header-icon-button {
-    @apply rounded-full border border-white/50 p-2 text-sm transition-colors duration-200;
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-[10px] border border-white/50 text-sm transition-colors duration-200;
   }
 
   .site-header.header-solid {
@@ -103,4 +103,38 @@ h6 {
     border-color: rgba(15, 23, 42, 0.25);
     background: rgba(15, 23, 42, 0.04);
   }
+
+  .button-base {
+    @apply inline-flex h-11 items-center justify-center rounded-[10px] border px-5 text-sm font-semibold transition-colors duration-200;
+  }
+
+  .button-primary {
+    @apply border-slate-200/80 bg-white/70 text-slate-900;
+    backdrop-filter: blur(12px);
+  }
+
+  .button-primary:hover {
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+  .button-secondary {
+    @apply border-slate-200 bg-transparent text-slate-700;
+  }
+
+  .button-secondary:hover {
+    border-color: rgba(15, 23, 42, 0.28);
+    background: rgba(15, 23, 42, 0.04);
+    color: #0f172a;
+  }
+
+  .button-link {
+    @apply inline-flex h-11 items-center justify-center rounded-[10px] border border-transparent bg-transparent px-2 text-sm font-semibold;
+    color: inherit;
+  }
+
+  .button-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
 }

@@ -18,7 +18,7 @@ export default function TripPlannerHighlight() {
             Tell us what you love. We&apos;ll build the perfect itinerary.
           </p>
           <div className="flex flex-wrap items-center gap-4">
-            <button className="inline-flex h-[46px] items-center justify-center rounded-[10px] bg-primary px-7 text-base font-semibold text-white shadow-sm transition hover:bg-primary-dark">
+            <button className="button-base button-primary px-6 text-base">
               Start Planning
             </button>
             <span className="text-sm text-white/60">
