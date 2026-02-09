@@ -3,6 +3,8 @@ export interface UserLocation {
   lng: number;
 }
 
+export type Location = UserLocation;
+
 const EARTH_RADIUS_KM = 6371;
 
 function toRadians(value: number) {
@@ -46,4 +48,35 @@ export async function getUserLocation(): Promise<UserLocation | null> {
       { timeout: 5000 }
     );
   });
+}
+
+export function sortByDistance<T extends { location: Location; distance?: number }>(
+  places: T[],
+  userLocation: Location
+): T[] {
+  return [...places]
+    .map((place) => ({
+      ...place,
+      distance: calculateDistance(
+        userLocation.lat,
+        userLocation.lng,
+        place.location.lat,
+        place.location.lng
+      ),
+    }))
+    .sort((a, b) => (a.distance ?? 0) - (b.distance ?? 0));
+}
+
+export function estimateWalkingTime(distanceKm: number) {
+  const minutes = Math.max(1, Math.round((distanceKm / 5) * 60));
+  if (minutes < 60) {
+    return `${minutes} min walk`;
+  }
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60;
+  const hourLabel = hours === 1 ? 'hr' : 'hrs';
+  if (remainingMinutes === 0) {
+    return `${hours} ${hourLabel} walk`;
+  }
+  return `${hours} ${hourLabel} ${remainingMinutes} min walk`;
 }

@@ -8,6 +8,14 @@ export type Suggestion = {
   description?: string;
   category: 'attraction' | 'restaurant';
   tags?: string[];
+  timing?: string;
+  place?: {
+    name: string;
+    distance?: number;
+  };
+  reason?: string;
+  ctaPrimary?: string;
+  ctaSecondary?: string;
 };
 
 const getTimeOfDayLabel = (hour: number) => {
