@@ -6,14 +6,6 @@ export function useTodaysSuggestions(attractions: any[], restaurants: any[]) {
   const [suggestions, setSuggestions] = useState<Suggestion[]>([])
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    loadSuggestions()
-
-    // Refresh every hour
-    const interval = setInterval(loadSuggestions, 60 * 60 * 1000)
-    return () => clearInterval(interval)
-  }, [attractions, restaurants])
-
   async function loadSuggestions() {
     setLoading(true)
 
@@ -32,6 +24,14 @@ export function useTodaysSuggestions(attractions: any[], restaurants: any[]) {
     setSuggestions(suggested)
     setLoading(false)
   }
+
+  useEffect(() => {
+    loadSuggestions()
+
+    // Refresh every hour
+    const interval = setInterval(loadSuggestions, 60 * 60 * 1000)
+    return () => clearInterval(interval)
+  }, [attractions, restaurants, loadSuggestions])
 
   return { suggestions, loading, refresh: loadSuggestions }
 }

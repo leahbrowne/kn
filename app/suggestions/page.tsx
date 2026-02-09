@@ -17,7 +17,7 @@ export default function SuggestionsPage() {
 
   return (
     <div>
-      <h2>Today's Suggestions</h2>
+      <h2>Today&apos;s Suggestions</h2>
       <p>
         {new Date().toLocaleDateString('en-US', {
           weekday: 'long',
