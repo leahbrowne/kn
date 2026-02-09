@@ -11,6 +11,24 @@ import { useLocationPermission } from "../../lib/hooks/useLocationPermission";
 import attractions from "../../data/attractions.json";
 import restaurants from "../../data/restaurants.json";
 
+type AttractionData = {
+  id: string;
+  name: string;
+  category?: string;
+  location: Location;
+  description?: string;
+  vibe?: string;
+};
+
+type RestaurantData = {
+  id: string;
+  name: string;
+  location: Location;
+  description?: string;
+  vibe?: string;
+  cuisine?: string;
+};
+
 type Place = {
   id: string;
   name: string;
@@ -43,8 +61,11 @@ export default function NearMePage() {
     if (location) {
       setUserLocation(location);
 
+      const attractionItems = attractions as AttractionData[];
+      const restaurantItems = restaurants as RestaurantData[];
+
       const allPlaces: Place[] = [
-        ...attractions.map((attraction) => ({
+        ...attractionItems.map((attraction) => ({
           ...attraction,
           description:
             attraction.description ??
@@ -52,7 +73,7 @@ export default function NearMePage() {
             "Explore this nearby attraction.",
           type: "attraction" as const,
         })),
-        ...restaurants.map((restaurant) => ({
+        ...restaurantItems.map((restaurant) => ({
           ...restaurant,
           description:
             restaurant.description ??
