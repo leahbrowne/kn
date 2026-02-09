@@ -7,6 +7,11 @@ export function useTodaysSuggestions(attractions: any[], restaurants: any[]) {
   const [suggestions, setSuggestions] = useState<Suggestion[]>([])
   const [loading, setLoading] = useState(true)
 
+  const readLocalStorage = (key: string, fallback: string) => {
+    if (typeof window === 'undefined') return fallback
+    return localStorage.getItem(key) || fallback
+  }
+
   useEffect(() => {
     loadSuggestions()
 
@@ -19,13 +24,9 @@ export function useTodaysSuggestions(attractions: any[], restaurants: any[]) {
     setLoading(true)
 
     const userLocation = await getUserLocation()
-    const visitorType =
-      (typeof window !== 'undefined' && localStorage.getItem('visitorType')) ||
-      'first-time'
+    const visitorType = readLocalStorage('visitorType', 'first-time')
     const weatherMode: WeatherMode =
-      (typeof window !== 'undefined' &&
-        (localStorage.getItem('weatherMode') as WeatherMode | null)) ||
-      'auto'
+      readLocalStorage('weatherMode', 'auto') as WeatherMode
     const currentHour = new Date().getHours()
 
     const suggested = getTodaysSuggestions(
