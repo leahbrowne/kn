@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { getTodaysSuggestions, type Suggestion } from '../suggestions-engine'
 import { getUserLocation } from '../geolocation'
 
@@ -6,7 +6,7 @@ export function useTodaysSuggestions(attractions: any[], restaurants: any[]) {
   const [suggestions, setSuggestions] = useState<Suggestion[]>([])
   const [loading, setLoading] = useState(true)
 
-  async function loadSuggestions() {
+  const loadSuggestions = useCallback(async () => {
     setLoading(true)
 
     const userLocation = await getUserLocation()
@@ -23,7 +23,7 @@ export function useTodaysSuggestions(attractions: any[], restaurants: any[]) {
 
     setSuggestions(suggested)
     setLoading(false)
-  }
+  }, [attractions, restaurants])
 
   useEffect(() => {
     loadSuggestions()

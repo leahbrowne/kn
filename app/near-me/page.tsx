@@ -14,7 +14,7 @@ import restaurants from "../../data/restaurants.json";
 type Place = {
   id: string;
   name: string;
-  description: string;
+  description?: string;
   category?: string;
   location: Location;
   type: "attraction" | "restaurant";
@@ -46,10 +46,18 @@ export default function NearMePage() {
       const allPlaces: Place[] = [
         ...attractions.map((attraction) => ({
           ...attraction,
+          description:
+            attraction.description ??
+            attraction.vibe ??
+            "Explore this nearby attraction.",
           type: "attraction" as const,
         })),
         ...restaurants.map((restaurant) => ({
           ...restaurant,
+          description:
+            restaurant.description ??
+            restaurant.vibe ??
+            "Enjoy a nearby dining option.",
           type: "restaurant" as const,
         })),
       ];
