@@ -29,7 +29,7 @@ export default function SuggestionsPage() {
       {suggestions.map((suggestion) => (
         <div key={suggestion.id}>
           <h3>{suggestion.title}</h3>
-          <span>{suggestion.timing}</span>
+          {suggestion.timing && <span>{suggestion.timing}</span>}
           <p>{suggestion.description}</p>
 
           {suggestion.place && (
@@ -39,11 +39,15 @@ export default function SuggestionsPage() {
             </div>
           )}
 
-          <p>
-            <em>{suggestion.reason}</em>
-          </p>
+          {suggestion.reason && (
+            <p>
+              <em>{suggestion.reason}</em>
+            </p>
+          )}
 
-          <button type="button">{suggestion.ctaPrimary}</button>
+          {suggestion.ctaPrimary && (
+            <button type="button">{suggestion.ctaPrimary}</button>
+          )}
           {suggestion.ctaSecondary && (
             <button type="button">{suggestion.ctaSecondary}</button>
           )}
