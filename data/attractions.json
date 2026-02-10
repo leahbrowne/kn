@@ -2,12 +2,14 @@
   {
     "id": "cockleshell-beach",
     "name": "Cockleshell Beach",
+    "description": "A calm southern coast beach known for clear water, nearby dining spots, and views of Nevis across a broad, sandy shoreline.",
     "category": "beach",
     "location": { "lat": 17.1136, "lng": -62.6281 }
   },
   {
     "id": "brimstone-hill-fortress",
     "name": "Brimstone Hill Fortress",
+    "description": "A restored hilltop military complex with expansive coastal vistas, historic stoneworks, and interpretive exhibits about the island’s colonial-era defense system.",
     "category": "attraction",
     "featured": true,
     "location": { "lat": 17.3632, "lng": -62.8399 }
@@ -15,6 +17,7 @@
   {
     "id": "romney-manor",
     "name": "Romney Manor & Caribelle Batik",
+    "description": "A heritage estate featuring landscaped gardens, historic grounds, and a working batik studio where visitors can observe traditional textile craftsmanship.",
     "category": "attraction",
     "quickVisit": true,
     "location": { "lat": 17.3285, "lng": -62.8024 }
@@ -22,6 +25,7 @@
   {
     "id": "frigate-bay-beach",
     "name": "Frigate Bay",
+    "description": "A popular beach area combining swimming-friendly waters, lively waterfront venues, and easy access to nearby hotels along the island’s southeast corridor.",
     "category": "beach",
     "location": { "lat": 17.2776, "lng": -62.7006 }
   }
