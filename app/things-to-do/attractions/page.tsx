@@ -1,69 +1,31 @@
-const attractions = [
-  {
-    name: 'Brimstone Hill Fortress',
-    description:
-      'UNESCO World Heritage fortress with panoramic views, military history, and a museum courtyard.',
-    highlight: 'History + skyline views',
-  },
-  {
-    name: 'St Kitts Scenic Railway',
-    description:
-      'Open-air rail journey hugging the coastline with sugar plantation stories and lush valleys.',
-    highlight: 'Coastal rail adventure',
-  },
-  {
-    name: 'Romney Manor & Caribelle Batik',
-    description:
-      'Historic estate for batik art, gardens, and the legendary 400-year-old saman tree.',
-    highlight: 'Art + botanical gardens',
-  },
-  {
-    name: 'Mount Liamuiga',
-    description:
-      'Guided volcano hike through rainforest trails and a misty crater rim.',
-    highlight: 'Adventure + rainforest',
-  },
-  {
-    name: 'Historic Basseterre',
-    description:
-      'Walkable city highlights including The Circus, Independence Square, and heritage churches.',
-    highlight: 'Culture + architecture',
-  },
-];
+import attractions from '@/data/attractions.json';
 
-const beaches = [
-  {
-    name: 'Cockleshell Beach',
-    vibe: 'Island hopping, calm waters, and Nevis views.',
-  },
-  {
-    name: 'South Friars Bay',
-    vibe: 'Soft sand with beach bars and water sports nearby.',
-  },
-  {
-    name: 'Frigate Bay',
-    vibe: 'Lively strip with restaurants, loungers, and golden sunsets.',
-  },
-  {
-    name: 'Timothy Beach',
-    vibe: 'Family-friendly shoreline with snorkel-ready waters.',
-  },
-];
+type Attraction = {
+  id: string;
+  name: string;
+  description: string;
+  image?: string;
+  slug?: string;
+  category?: string;
+};
 
-const experiences = [
-  {
-    title: 'Morning on the coast',
-    items: ['Scenic Railway sunrise departure', 'Stop for sugar plantation history', 'Beachside brunch in Frigate Bay'],
-  },
-  {
-    title: 'Culture + gardens afternoon',
-    items: ['Romney Manor batik studio tour', 'Rainforest walk through botanical trails', 'Local rum tasting'],
-  },
-  {
-    title: 'Highland adventure',
-    items: ['Early hike to Mount Liamuiga', 'Volcano crater viewpoint', 'Return to Basseterre for dinner'],
-  },
-];
+const attractionItems = attractions as Attraction[];
+
+const attractionCards = attractionItems.filter(
+  (attraction) => attraction.category !== 'beach',
+);
+
+const signatureBeaches = attractionItems.filter(
+  (attraction) => attraction.category === 'beach',
+);
+
+const curatedDayIdeas = attractionCards.map((attraction) => ({
+  title: attraction.name,
+  items: [attraction.description],
+}));
+
+const getAttractionHighlight = (attraction: Attraction) =>
+  attraction.slug ?? attraction.id.replace(/-/g, ' ');
 
 export default function AttractionsPage() {
   return (
@@ -83,9 +45,9 @@ export default function AttractionsPage() {
 
         <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-6">
-            {attractions.map((attraction) => (
+            {attractionCards.map((attraction) => (
               <article
-                key={attraction.name}
+                key={attraction.id}
                 className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg"
               >
                 <div className="flex flex-wrap items-center justify-between gap-3">
@@ -93,7 +55,7 @@ export default function AttractionsPage() {
                     {attraction.name}
                   </h2>
                   <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
-                    {attraction.highlight}
+                    {getAttractionHighlight(attraction)}
                   </span>
                 </div>
                 <p className="mt-3 text-sm text-slate-600">
@@ -109,10 +71,10 @@ export default function AttractionsPage() {
                 Signature beaches
               </h3>
               <ul className="mt-4 space-y-3 text-sm text-slate-600">
-                {beaches.map((beach) => (
-                  <li key={beach.name} className="rounded-2xl bg-slate-50 p-4">
+                {signatureBeaches.map((beach) => (
+                  <li key={beach.id} className="rounded-2xl bg-slate-50 p-4">
                     <p className="font-semibold text-slate-800">{beach.name}</p>
-                    <p className="mt-1 text-xs text-slate-500">{beach.vibe}</p>
+                    <p className="mt-1 text-xs text-slate-500">{beach.description}</p>
                   </li>
                 ))}
               </ul>
@@ -122,7 +84,7 @@ export default function AttractionsPage() {
                 Curated day ideas
               </h3>
               <div className="mt-4 space-y-4">
-                {experiences.map((experience) => (
+                {curatedDayIdeas.map((experience) => (
                   <div key={experience.title} className="rounded-2xl bg-slate-50 p-4">
                     <p className="text-sm font-semibold text-slate-800">
                       {experience.title}
