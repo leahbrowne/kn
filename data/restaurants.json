@@ -1,35 +1,322 @@
 [
   {
-    "id": "marshalls",
-    "name": "Marshall's",
-    "cuisine": "Caribbean classics with modern flair.",
-    "description": "Chef-driven plates highlighting fresh seafood, island spices, and an elegant waterfront dining room.",
-    "type": "fine-dining",
-    "romantic": true,
-    "popular": true,
-    "location": { "lat": 17.2975, "lng": -62.7222 }
+    "slug": "1762-gibraltar-gastrolounge",
+    "name": "17°62° Gibraltar Gastrolounge",
+    "description": "Stylish gastrolounge atop Brimstone Hill offering inventive fusion cuisine and dramatic island views.",
+    "region": "Northern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-thingstodostkitts-stkittsrestaurants-1762gibraltargastrolounge-690d11fc5c705-480x300.jpg",
+    "website": "https://www.1762gibraltar.com/"
   },
   {
-    "id": "vibes-beach-bar",
-    "name": "Vibes Beach Bar",
-    "cuisine": "Casual beach bites and tropical cocktails.",
-    "description": "Laid-back spot for grilled fish, rum punch, and sunset music right on the sand.",
-    "popular": true,
-    "location": { "lat": 17.2711, "lng": -62.6995 }
+    "slug": "arthurs",
+    "name": "Arthur's",
+    "description": "Sea-to-fork dining focused on fresh local seafood, classic preparations and relaxed waterfront charm.",
+    "region": "Northern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-content-culinary-17-64dfbacfc8e87-480x300.jpg",
+    "website": "https://bellemontfarm.com/food-arthurs/"
   },
   {
-    "id": "carambola-beach-club",
+    "slug": "boozies-restaurant",
+    "name": "Boozies Restaurant",
+    "description": "Fun neighbourhood spot perfect for liming, serving hearty plates, cold drinks and good company.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/dg_07274-6500b7ee0f15d-optimized-650209dbbb290-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "buddha-bar",
+    "name": "Buddha Bar",
+    "description": "Chic lounge combining sushi, Asian-inspired plates and cocktails with late-night music and a modern vibe.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/buddha-bar-st-kitts-1-md-64dcde29144fe-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "buddies-beach-hut",
+    "name": "Buddies Beach Hut",
+    "description": "Relaxed beach hut serving elevated comfort food in a casual setting just steps from the sea.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/buddies-beach-hut-4-md-64dcdf48c1d4a-65020e625c4de-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "carambola-beach-club",
     "name": "Carambola Beach Club",
-    "cuisine": "Resort dining with ocean views.",
-    "description": "Relax with mezze platters, salads, and signature cocktails under palm-shaded lounges.",
-    "location": { "lat": 17.3768, "lng": -62.8789 }
+    "description": "Upscale beachfront club offering refined dining, craft cocktails and elegant oceanfront ambience.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-carambola-64bff075bd08c-480x300.jpg",
+    "website": "http://www.carambolabeachclub.com/"
   },
   {
-    "id": "sunset-cafe",
-    "name": "Sunset Cafe",
-    "cuisine": "Caribbean-American fusion.",
-    "description": "Known for lobster nights, local produce, and golden hour views on the water.",
-    "popular": true,
-    "location": { "lat": 17.2959, "lng": -62.7158 }
+    "slug": "cathys-ocean-view-bar-and-grill",
+    "name": "Cathy's Ocean View Bar and Grill",
+    "description": "Authentic local favourites and grilled classics served with sweeping ocean views and warm island hospitality.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/sty00254-6500ea99db6bd-optimized-65020df15f122-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "coopers-bar",
+    "name": "Coopers Bar",
+    "description": "Classic island bar known for tasty comfort dishes, cold drinks and an easygoing neighbourhood feel.",
+    "region": "Northern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-coopers-64bff079c826d-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "creole-restaurant",
+    "name": "Creole Restaurant",
+    "description": "Traditional Creole and Caribbean cooking featuring bold spices, slow-cooked dishes and homestyle recipes.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-creole-64bff07bb58e1-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "dem-timez-skn",
+    "name": "Dem Timez SKN",
+    "description": "Lively local hangout serving simple Caribbean eats, cold beers and the perfect spot to unwind with friends.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-dem-times-64bff07db8946-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "drop-anchor-grill",
+    "name": "Drop Anchor Grill",
+    "description": "Open-air grill serving hearty comfort food and cold drinks with sweeping sea views and a relaxed island breeze.",
+    "region": "Central",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/cannelloni_vegetali_vegan-64e63d3dea131-480x300.jpeg",
+    "website": ""
+  },
+  {
+    "slug": "el-fredos",
+    "name": "El Fredo's",
+    "description": "Local favourite dishing up homestyle Caribbean meals and generous portions in a warm, family-run atmosphere.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-el-fredos-64bff081c3698-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "inons-beach-bar",
+    "name": "Inon's Beach Bar",
+    "description": "Rustic beachfront shack serving grilled bites, cold beers and easygoing beach bar energy all day long.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/dg_06661-6500e5c63032a-optimized-650210d05dcdb-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "island-roasters",
+    "name": "Island Roasters",
+    "description": "Specialty coffee spot roasting and brewing local beans alongside light breakfasts and fresh pastries.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/sty00355-6500d2a164275-optimized-65020d802d2ef-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "ital-creations",
+    "name": "Ital Creations",
+    "description": "Plant-based Caribbean cuisine featuring vegan and vegetarian dishes packed with bold island spices and flavour.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-ital-creation-64bff0c2c509f-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "jam-rock-restaurant",
+    "name": "Jam Rock Restaurant",
+    "description": "Authentic Jamaican flavours including jerk meats, curries and comfort classics served in a lively setting.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/sty00312-6500f1431d252-optimized-6502105af2767-480x300.jpg",
+    "website": "http://www.jamrockbarandrestaurant.com/"
+  },
+  {
+    "slug": "marshalls",
+    "name": "Marshall's",
+    "description": "Upscale dining with creative global dishes, refined presentation and panoramic coastal views.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-marshalls-64bff0c996d32-480x300.jpg",
+    "website": "http://www.marshallsdining.com/"
+  },
+  {
+    "slug": "merengue",
+    "name": "Merengue",
+    "description": "Spanish-inspired restaurant offering tapas, seafood and bold Mediterranean flavours with a festive atmosphere.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/dg_06609-6500ee5cacf10-optimized-65020ccd2acb5-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "mr-xs-shigiddy-shack",
+    "name": "Mr. X's Shigiddy Shack",
+    "description": "Legendary beach shack known for great food, strong drinks and carefree good times that stretch into the night.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/dg_06560-6500bf020a3db-optimized-65020fa905901-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "oceans-beach-bar-lounge-and-aqua-park",
+    "name": "Ocean's Beach Bar Lounge and Aqua Park",
+    "description": "Family-friendly beachfront lounge serving traditional Caribbean dishes, drinks and entertainment by the water.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/sty00179-6500e1bc42f4d-optimized-65020c93cbbc3-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "orchid-bay-beach-house-restaurant",
+    "name": "Orchid Bay Beach House Restaurant",
+    "description": "Family-style Italian favourites served in a relaxed garden setting, featuring handmade pastas, wood-fired pizzas and rustic Mediterranean flavours.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-thingstodostkitts-stkittsrestaurant-orchidbaybeachhouse-69039623a93f2-480x300.jpg",
+    "website": "https://www.orchidbaybeachhouse.com/"
+  },
+  {
+    "slug": "patsys-beach-bar-and-grill",
+    "name": "Patsy's Beach Bar and Grill",
+    "description": "Laid-back beachfront bar and grill serving comfort food, cold drinks and easy island vibes from lunch through sunset.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/sty00229-6500db97cf21d-optimized-optimized-65020c4fc2e45-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "poinciana-restaurant",
+    "name": "Poinciana Restaurant",
+    "description": "Casual open-air dining with local Caribbean classics and fresh daily specials in a friendly, welcoming setting.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-poinciana-64bff0d025f82-480x300.jpg",
+    "website": "http://poinciana.restaurantsnapshot.com/?utm_source=tripadvisor&utm_medium=referral"
+  },
+  {
+    "slug": "reef-bar-grill-mugzys",
+    "name": "Reef Bar & Grill (Mugzy's)",
+    "description": "Fresh Caribbean seafood and grilled favourites served steps from the shore with generous portions and island hospitality.",
+    "region": "Northern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-reef-bar-grill-64bff0d222e97-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "reggae-beach-bar-grill",
+    "name": "Reggae Beach Bar & Grill",
+    "description": "Beachfront dining with reggae rhythms, grilled seafood, rum punches and relaxed toes-in-the-sand atmosphere.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-reggaebeach-236-1-64bff0d439c27-480x300.jpg",
+    "website": "http://www.reggaebeachbar.com/"
+  },
+  {
+    "slug": "rituals",
+    "name": "Rituals",
+    "description": "Local coffee house offering freshly brewed coffee, light bites and a cosy space to start your day or recharge.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-rituals-64bff0f4aa1df-480x300.jpg",
+    "website": "http://www.ritualscoffeehouse.com/"
+  },
+  {
+    "slug": "rock-lobster-seafood-grill",
+    "name": "Rock Lobster Seafood & Grill",
+    "description": "Seafood-focused menu of grilled lobster, fish and island specialties crafted with care and bold coastal flavours.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-rock-lobster-64bff0f6984ea-480x300.jpg",
+    "website": "http://rocklobsterskn.com/"
+  },
+  {
+    "slug": "serendipity-restaurant",
+    "name": "Serendipity Restaurant",
+    "description": "Refined international dishes made with fresh local produce, blending global techniques with Caribbean ingredients.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-serendipity-64bff0fb15b79-480x300.jpg",
+    "website": "http://www.serendipitystkitts.net/about-us.html"
+  },
+  {
+    "slug": "shipwreck-beach-bar-grill",
+    "name": "Shipwreck Beach Bar & Grill",
+    "description": "Lively beach bar known for its legendary happy hour, cold beers and casual bites right on the sand.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-shipwreck-beach-bar-64bff0fd5a7fd-480x300.jpg",
+    "website": "https://shipwreckstkitts.com/"
+  },
+  {
+    "slug": "spice-mill-restaurant",
+    "name": "Spice Mill Restaurant",
+    "description": "Upscale dining where Caribbean culture meets creative cuisine, cocktails and a vibrant social atmosphere.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-spicemill-1066-64bff0ff9ebed-480x300.jpg",
+    "website": "http://www.spicemillrestaurant.com/"
+  },
+  {
+    "slug": "sprat-net-bar-grill",
+    "name": "Sprat Net Bar & Grill",
+    "description": "No-frills seaside grill serving the day’s fresh catch, simple flavours and authentic fisherman-style cooking.",
+    "region": "Central",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-spratnet-64bff101a234e-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "sunset-cafe-the-dock",
+    "name": "Sunset Cafe - The Dock",
+    "description": "Scenic waterfront café offering relaxed beachfront meals, tropical drinks and sunset views over the dock.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-sunset-cafe-64bff103c1187-480x300.jpg",
+    "website": "http://www.timothybeach.com/"
+  },
+  {
+    "slug": "sweet-savory-bistro",
+    "name": "Sweet + Savory Bistro",
+    "description": "Charming bistro serving indulgent brunches, pastries and sweet-and-savoury plates in a cosy setting.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-sweet-savory-64bff105a12fc-480x300.jpg",
+    "website": "https://orders.caribtogo.com/menu/sweetandsavory"
+  },
+  {
+    "slug": "the-fishermans-village",
+    "name": "The Fisherman's Village",
+    "description": "True ocean-to-table experience featuring freshly caught seafood prepared simply and served with harbour views.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-fishermansvillage-64bff0c0590ab-480x300.jpg",
+    "website": "https://www.hyatt.com/en-US/hotel/saint-kitts-and-nevis/park-hyatt-st-kitts/skbph/dining"
+  },
+  {
+    "slug": "the-great-house",
+    "name": "The Great House",
+    "description": "Historic estate restaurant offering elegant island dining with classic dishes and refined Caribbean touches.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-the_great_house_restaurant-64bff10841d3c-480x300.jpg",
+    "website": "https://www.hyatt.com/en-US/hotel/saint-kitts-and-nevis/park-hyatt-st-kitts/skbph/dining"
+  },
+  {
+    "slug": "the-kitchen",
+    "name": "The Kitchen",
+    "description": "Farm-to-table cuisine celebrating seasonal island produce with bright flavours and contemporary presentation.",
+    "region": "Northern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-kitchen_9983-64bff0c748fe5-480x300.jpg",
+    "website": "https://bellemontfarm.com/food-kitchen/"
+  },
+  {
+    "slug": "the-monkey-bar",
+    "name": "The Monkey Bar",
+    "description": "Bustling bar and social hub with cocktails, music and a lively crowd, perfect for evening drinks and fun nights out.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-things-to-do-st-kitts-st-kitts-restaurants-the-monkey-bar-03-65245ef659e8e-480x300.jpg",
+    "website": "https://monkeybarstkitts.com/index.html"
+  },
+  {
+    "slug": "the-pavilion-restaurant",
+    "name": "The Pavilion Restaurant",
+    "description": "Authentic Caribbean recipes prepared with fresh local ingredients in a relaxed yet polished dining space.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-map-restaurants-bars-the-pavilion-64bff11f22087-480x300.jpg",
+    "website": "http://www.christopheharbour.com/destination/pavilion-beach-club"
+  },
+  {
+    "slug": "the-sommelier",
+    "name": "The Sommelier",
+    "description": "Intimate wine and tapas bar pairing Spanish-inspired small plates with curated wines and creative cocktails.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/stkitts-thingstodostkitts-stkittsrestaurants-thesommelier-690d12c5489d3-480x300.jpg",
+    "website": ""
+  },
+  {
+    "slug": "the-stone-barn",
+    "name": "The Stone Barn",
+    "description": "Fine dining destination known for premium steaks, fresh seafood and an elevated culinary experience in a stylish setting.",
+    "region": "Southern End",
+    "image": "https://tempo.cdn.tambourine.com/st-kitts/media/cache/sk_us_roadshow_park_hyatt_st_kitts_1920x1080_the_stone_barn_restaurant-64dff211ca1e2-480x300.jpg",
+    "website": "https://www.hyatt.com/en-US/hotel/saint-kitts-and-nevis/park-hyatt-st-kitts/skbph/dining"
   }
 ]
