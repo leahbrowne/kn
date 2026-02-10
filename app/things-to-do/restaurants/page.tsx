@@ -35,7 +35,7 @@ export default function RestaurantsPage() {
           <div className="grid gap-6">
             {restaurants.map((restaurant) => (
               <article
-                key={restaurant.name}
+                key={restaurant.slug}
                 className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg"
               >
                 <div className="flex flex-wrap items-center justify-between gap-3">
@@ -43,7 +43,7 @@ export default function RestaurantsPage() {
                     {restaurant.name}
                   </h2>
                   <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
-                    {restaurant.cuisine}
+                    {restaurant.region}
                   </span>
                 </div>
                 <p className="mt-3 text-sm text-slate-600">
