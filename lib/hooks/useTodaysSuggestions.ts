@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 
+import { usePersonalisation } from "../../hooks/usePersonalisation";
 import { getTodaysSuggestions, type Suggestion } from "../suggestions-engine";
 import { getUserLocation } from "../geolocation";
 import type { WeatherMode } from "./useWeatherMode";
@@ -10,6 +11,7 @@ const readLocalStorage = (key: string, fallback: string) => {
 };
 
 export function useTodaysSuggestions(attractions: any[], restaurants: any[]) {
+  const { persona } = usePersonalisation();
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -17,7 +19,7 @@ export function useTodaysSuggestions(attractions: any[], restaurants: any[]) {
     setLoading(true);
 
     const userLocation = await getUserLocation();
-    const visitorType = readLocalStorage("visitorType", "first-time");
+    const visitorType = persona;
     const weatherMode = readLocalStorage("weatherMode", "auto") as WeatherMode;
     const currentHour = new Date().getHours();
 
@@ -32,14 +34,14 @@ export function useTodaysSuggestions(attractions: any[], restaurants: any[]) {
 
     setSuggestions(suggested);
     setLoading(false);
-  }, [attractions, restaurants]);
+  }, [attractions, persona, restaurants]);
 
   useEffect(() => {
     loadSuggestions();
 
     const interval = setInterval(loadSuggestions, 60 * 60 * 1000);
     return () => clearInterval(interval);
-  }, [attractions, restaurants, loadSuggestions]);
+  }, [attractions, loadSuggestions, restaurants]);
 
   return { suggestions, loading, refresh: loadSuggestions };
 }

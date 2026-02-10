@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+import ViewAsSelector from "../components/ViewAsSelector";
+import { usePersonalisation } from "../hooks/usePersonalisation";
 import { useInstallPrompt } from "../lib/hooks/useInstallPrompt";
 
 const navLinks = [
@@ -18,6 +20,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const { canInstall, dismissPrompt, isInstalled, promptInstall } =
     useInstallPrompt();
+  const { persona, setPersona } = usePersonalisation();
 
   const handleNavClick = () => setIsMenuOpen(false);
 
@@ -80,6 +83,7 @@ export default function Header() {
         </div>
 
         <div className="hidden items-center justify-end gap-3 lg:flex">
+          <ViewAsSelector persona={persona} setPersona={setPersona} />
           <a className="header-ghost-button" href="/discover">
             Discover
           </a>
