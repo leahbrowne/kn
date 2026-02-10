@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Chatbot from "../components/Chatbot";
 import Footer from "../components/Footer";
+import { PersonalisationProvider } from "../context/PersonalisationContext";
 import Header from "./Header";
 
 export const metadata = {
@@ -29,12 +30,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className="bg-slate-50 text-slate-900">
-        <div className="flex min-h-screen flex-col">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
-        <Chatbot />
+        <PersonalisationProvider>
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+          <Chatbot />
+        </PersonalisationProvider>
       </body>
     </html>
   );

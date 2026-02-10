@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { getTripPlannerResponse } from '../../lib/mock-trip-planner';
 import { useWeatherMode } from '../../lib/hooks/useWeatherMode';
+import { usePersonalisation } from '../../hooks/usePersonalisation';
 
 type PlannerMessage = {
   id: string;
@@ -30,8 +31,6 @@ type ItineraryTemplate = {
 };
 
 const typingDots = ['0', '150', '300'];
-const TRIP_PERSONA_STORAGE_KEY = 'tripPersona';
-
 const tripPersonaOptions = [
   {
     value: 'romance',
@@ -199,7 +198,7 @@ const shareItinerary = async (itinerary: ItineraryTemplate) => {
 };
 
 export default function PlanYourTripPage() {
-  const [tripPersona, setTripPersona] = useState<TripPersonaKey | null>(null);
+  const { tripPersona, setTripPersona } = usePersonalisation();
   const [messages, setMessages] = useState<PlannerMessage[]>([
     {
       id: 'intro',
@@ -214,17 +213,7 @@ export default function PlanYourTripPage() {
     () => getSavedItineraries().map((item) => item.title)
   );
 
-  useEffect(() => {
-    const storedPersona = window.localStorage.getItem(
-      TRIP_PERSONA_STORAGE_KEY
-    ) as TripPersonaKey | null;
-    if (
-      storedPersona &&
-      tripPersonaOptions.some((option) => option.value === storedPersona)
-    ) {
-      setTripPersona(storedPersona);
-    }
-  }, []);
+
 
   const activePersona =
     tripPersonaOptions.find((option) => option.value === tripPersona) ??
@@ -307,10 +296,6 @@ export default function PlanYourTripPage() {
                         name="tripPersona"
                         onChange={() => {
                           setTripPersona(option.value);
-                          window.localStorage.setItem(
-                            TRIP_PERSONA_STORAGE_KEY,
-                            option.value
-                          );
                         }}
                         type="radio"
                         value={option.value}
