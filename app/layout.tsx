@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Chatbot from "../components/Chatbot";
 import Footer from "../components/Footer";
+import OfflineIndicator from "../components/OfflineIndicator";
 import { PersonalisationProvider } from "../context/PersonalisationContext";
 import Header from "./Header";
 
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <PersonalisationProvider>
           <div className="flex min-h-screen flex-col">
             <Header />
+            <OfflineIndicator />
             <main className="flex-1">{children}</main>
             <Footer />
           </div>
