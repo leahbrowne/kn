@@ -1,35 +1,4 @@
-const restaurants = [
-  {
-    name: "Marshall's",
-    cuisine: 'Caribbean classics with modern flair.',
-    description:
-      'Chef-driven plates highlighting fresh seafood, island spices, and an elegant waterfront dining room.',
-  },
-  {
-    name: 'Vibes Beach Bar',
-    cuisine: 'Casual beach bites and tropical cocktails.',
-    description:
-      'Laid-back spot for grilled fish, rum punch, and sunset music right on the sand.',
-  },
-  {
-    name: 'Carambola Beach Club',
-    cuisine: 'Resort dining with ocean views.',
-    description:
-      'Relax with mezze platters, salads, and signature cocktails under palm-shaded lounges.',
-  },
-  {
-    name: 'Sunset Cafe',
-    cuisine: 'Caribbean-American fusion.',
-    description:
-      'Known for lobster nights, local produce, and golden hour views on the water.',
-  },
-  {
-    name: "Fisherman's Village",
-    cuisine: 'Local food stalls and fresh catch.',
-    description:
-      'Grab grilled snapper, conch fritters, and island sides straight from the harbor.',
-  },
-];
+import restaurants from '@/data/restaurants.json';
 
 const foodieMoments = [
   {
