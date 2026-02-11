@@ -5,18 +5,17 @@ import { useEffect, useState } from "react";
 import { useInstallPrompt } from "../lib/hooks/useInstallPrompt";
 
 const navLinks = [
-  { label: "Explore", href: "/things-to-do/attractions" },
-  { label: "Stay", href: "/stay" },
+  { label: "Explore", href: "/things-to-do" },
   { label: "Eat & Drink", href: "/things-to-do/restaurants" },
+  { label: "Stay", href: "/stay" },
   { label: "Plan", href: "/plan-your-trip" },
   { label: "Near Me", href: "/near-me" },
-];
+] as const;
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { canInstall, dismissPrompt, isInstalled, promptInstall } =
-    useInstallPrompt();
+  const { promptInstall } = useInstallPrompt();
 
   const handleNavClick = () => setIsMenuOpen(false);
 
@@ -71,32 +70,13 @@ export default function Header() {
                   </a>
                 </li>
               ))}
+              <li>
+                <button className="header-nav-link" onClick={handleInstall} type="button">
+                  Install App
+                </button>
+              </li>
             </ul>
           </nav>
-        </div>
-
-        <div className="hidden items-center justify-end gap-3 lg:flex">
-          <a className="header-ghost-button" href="/stay">
-            View Stays
-          </a>
-          {canInstall && !isInstalled ? (
-            <>
-              <button
-                className="header-ghost-button"
-                onClick={handleInstall}
-                type="button"
-              >
-                Install App
-              </button>
-              <button
-                className="header-ghost-button"
-                onClick={dismissPrompt}
-                type="button"
-              >
-                Not now
-              </button>
-            </>
-          ) : null}
         </div>
       </div>
 
@@ -117,34 +97,19 @@ export default function Header() {
                 </a>
               </li>
             ))}
+            <li>
+              <button
+                className="header-nav-link"
+                onClick={() => {
+                  handleInstall();
+                  handleNavClick();
+                }}
+                type="button"
+              >
+                Install App
+              </button>
+            </li>
           </ul>
-          <div className="mt-5 flex flex-col gap-3">
-            <a
-              className="header-ghost-button text-center"
-              href="/stay"
-              onClick={handleNavClick}
-            >
-              View Stays
-            </a>
-            {canInstall && !isInstalled ? (
-              <>
-                <button
-                  className="header-ghost-button"
-                  onClick={handleInstall}
-                  type="button"
-                >
-                  Install App
-                </button>
-                <button
-                  className="header-ghost-button"
-                  onClick={dismissPrompt}
-                  type="button"
-                >
-                  Not now
-                </button>
-              </>
-            ) : null}
-          </div>
         </nav>
       </div>
     </header>
