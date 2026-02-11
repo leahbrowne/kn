@@ -14,8 +14,8 @@ export const metadata = {
   description: "Island escapes, curated for you.",
   manifest: "/manifest.json",
   icons: {
-    icon: "/icons/icon.svg",
-    apple: "/icons/icon.svg",
+    icon: "/icons/stkitts_icon_192 x 192 px.png",
+    apple: "/icons/stkitts_icon_180 x 180 px.png",
   },
   appleWebApp: {
     capable: true,
