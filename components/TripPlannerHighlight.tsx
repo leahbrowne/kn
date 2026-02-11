@@ -9,10 +9,10 @@ export default function TripPlannerHighlight() {
       <div className="relative mx-auto grid w-full max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div className="space-y-6">
           <p className="text-xs font-semibold uppercase tracking-[0.45em] text-white/60">
-            AI Trip Planner
+            Trip Planner
           </p>
           <h2 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-            Plan your trip in seconds with AI
+            Plan your trip in seconds
           </h2>
           <p className="max-w-xl text-lg text-white/75 sm:text-xl">
             Tell us what you love. We&apos;ll build the perfect itinerary.
@@ -30,7 +30,7 @@ export default function TripPlannerHighlight() {
           <div className="absolute -top-6 left-10 h-16 w-16 rounded-full bg-amber-900/25 blur-2xl" />
           <div className="rounded-[2rem] border border-white/10 bg-white/10 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.55)] backdrop-blur-xl">
             <div className="flex items-center justify-between text-xs text-white/50">
-              <span>AI Trip Planner</span>
+              <span>Trip Planner</span>
               <span className="rounded-full bg-emerald-400/20 px-2 py-1 text-[0.6rem] uppercase tracking-[0.2em] text-emerald-200">
                 Live
               </span>

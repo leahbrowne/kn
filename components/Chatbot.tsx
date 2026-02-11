@@ -53,12 +53,12 @@ export default function Chatbot() {
   const quickActions = useMemo(() => chatbotQuickActions, []);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-24 right-6 z-50 flex flex-col items-end gap-3 sm:bottom-6">
       {isOpen && (
         <div className="w-[340px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl">
           <div className="flex items-center justify-between bg-slate-900 px-4 py-3 text-white">
             <div>
-              <p className="text-sm font-semibold">Ask the St Kitts AI Helper</p>
+              <p className="text-sm font-semibold">Ask Your Travel Guide</p>
               <p className="text-xs text-slate-300">Mock responses • Phase 3</p>
             </div>
             <button
@@ -101,7 +101,7 @@ export default function Chatbot() {
                     />
                   ))}
                 </div>
-                AI is typing...
+                Guide is typing...
               </div>
             )}
           </div>
@@ -149,8 +149,11 @@ export default function Chatbot() {
         onClick={() => setIsOpen((prev) => !prev)}
         type="button"
       >
-        {isOpen ? 'Hide Chat' : 'Chat with AI'}
-        <span aria-hidden="true">💬</span>
+        <span className="hidden sm:inline">{isOpen ? 'Hide Chat' : 'Ask Us Anything'}</span>
+        <span className="sm:hidden" aria-label={isOpen ? 'Hide Chat' : 'Ask Us Anything'}>
+          {isOpen ? '✕' : '💬'}
+        </span>
+        <span aria-hidden="true" className="hidden sm:inline">💬</span>
       </button>
     </div>
   );
