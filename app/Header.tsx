@@ -3,12 +3,12 @@
 import { useEffect, useState } from "react";
 
 const navLinks = [
-  { label: "Explore", href: "/things-to-do/attractions" },
-  { label: "Stay", href: "/stay" },
+  { label: "Explore", href: "/things-to-do" },
   { label: "Eat & Drink", href: "/things-to-do/restaurants" },
+  { label: "Stay", href: "/stay" },
   { label: "Plan", href: "/plan-your-trip" },
   { label: "Near Me", href: "/near-me" },
-];
+] as const;
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,6 +60,11 @@ export default function Header() {
                   </a>
                 </li>
               ))}
+              <li>
+                <button className="header-nav-link" onClick={handleInstall} type="button">
+                  Install App
+                </button>
+              </li>
             </ul>
           </nav>
         </div>
@@ -82,6 +87,18 @@ export default function Header() {
                 </a>
               </li>
             ))}
+            <li>
+              <button
+                className="header-nav-link"
+                onClick={() => {
+                  handleInstall();
+                  handleNavClick();
+                }}
+                type="button"
+              >
+                Install App
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
