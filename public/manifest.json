@@ -8,14 +8,19 @@
   "theme_color": "#0f172a",
   "icons": [
     {
-      "src": "/icons/icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
+      "src": "/icons/stkitts_icon_192 x 192 px.png",
+      "sizes": "192x192",
+      "type": "image/png"
     },
     {
-      "src": "/icons/maskable-icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "/icons/stkitts_icon_521x512.png",
+      "sizes": "521x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/stkitts_icon_521x512.png",
+      "sizes": "521x512",
+      "type": "image/png",
       "purpose": "maskable"
     }
   ]
