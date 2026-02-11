@@ -49,41 +49,29 @@ export const MOCK_CONCIERGE_RESPONSES = {
   ],
 } as const;
 
-export type ConciergeResponseKey = keyof typeof MOCK_CONCIERGE_RESPONSES;
+const profanityRegex =
+  /\b(fuck|shit|bitch|asshole|wtf|stupid|idiot|cunt|motherfucker|dumb|hate|kill|sucks)\b/i;
 
-const intentPatterns: Array<{ key: ConciergeResponseKey; pattern: RegExp }> = [
-  { key: 'greeting', pattern: /\b(hi|hello|hey|good morning|good afternoon|good evening)\b/i },
-  { key: 'beaches', pattern: /\b(beach|beaches|swim|snorkel|snorkelling|shore|coast)\b/i },
-  { key: 'restaurants', pattern: /\b(restaurant|restaurants|food|eat|dining|dinner|lunch|breakfast)\b/i },
-  { key: 'itinerary', pattern: /\b(3-day|three day|itinerary|day 1|day one)\b/i },
-  { key: 'planning', pattern: /\b(plan|planning|trip|schedule|vacation|holiday|visit)\b/i },
-  { key: 'nearMe', pattern: /\b(near me|nearby|close to me|around me|closest|location)\b/i },
-];
+export function getMockReply(input: string) {
+  const text = input.toLowerCase().trim();
 
-const aggressivePattern =
-  /\b(fuck|shit|bitch|asshole|idiot|stupid|dumb|hate you|screw you|damn you|kill you|go to hell)\b|!{3,}/i;
-const profanityPattern = /\b(fuck|shit|bitch|damn)\b/i;
-
-export function getMockReply(message: string): string {
-  const text = message.trim();
-  if (!text) {
-    return MOCK_CONCIERGE_RESPONSES.fallback.join('\n');
+  if (profanityRegex.test(text)) {
+    return 'I’m here to help 😊 If something’s frustrating, tell me what you need and I’ll do my best to guide you.';
   }
 
-  if (aggressivePattern.test(text)) {
-    return MOCK_CONCIERGE_RESPONSES.aggressive.join('\n');
+  if (text.includes('beach')) {
+    return 'Looking to relax or something more lively? I can suggest calm beaches or social beach bars.';
   }
 
-  if (profanityPattern.test(text)) {
-    return MOCK_CONCIERGE_RESPONSES.profanity.join('\n');
+  if (text.includes('eat') || text.includes('food') || text.includes('restaurant')) {
+    return 'Craving local seafood, Caribbean flavours, or something upscale? Tell me your vibe.';
   }
 
-  const detectedIntent = intentPatterns.find(({ pattern }) => pattern.test(text));
-  if (!detectedIntent) {
-    return MOCK_CONCIERGE_RESPONSES.fallback.join('\n');
+  if (text.includes('plan') || text.includes('itinerary')) {
+    return 'How many days are you staying? I can sketch a simple beach-and-food plan for you.';
   }
 
-  return MOCK_CONCIERGE_RESPONSES[detectedIntent.key].join('\n');
+  return 'I’m the demo St Kitts travel assistant. Ask about beaches, food, or planning and I’ll guide you.';
 }
 
 export const chatbotQuickActions = [
