@@ -2,17 +2,13 @@
 
 import { useEffect, useState } from "react";
 
-import ViewAsSelector from "../components/ViewAsSelector";
-import { usePersonalisation } from "../hooks/usePersonalisation";
 import { useInstallPrompt } from "../lib/hooks/useInstallPrompt";
 
 const navLinks = [
   { label: "Explore", href: "/things-to-do/attractions" },
   { label: "Stay", href: "/stay" },
   { label: "Eat & Drink", href: "/things-to-do/restaurants" },
-  { label: "Stories", href: "/stories" },
   { label: "Plan", href: "/plan-your-trip" },
-  { label: "Suggestions", href: "/suggestions" },
   { label: "Near Me", href: "/near-me" },
 ];
 
@@ -21,7 +17,6 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const { canInstall, dismissPrompt, isInstalled, promptInstall } =
     useInstallPrompt();
-  const { persona, setPersona } = usePersonalisation();
 
   const handleNavClick = () => setIsMenuOpen(false);
 
@@ -54,9 +49,6 @@ export default function Header() {
         </a>
 
         <div className="flex items-center gap-3 lg:hidden">
-          <a className="header-ghost-button text-xs" href="/discover">
-            Discover
-          </a>
           <button
             aria-controls="mobile-navigation"
             aria-expanded={isMenuOpen}
@@ -84,10 +76,6 @@ export default function Header() {
         </div>
 
         <div className="hidden items-center justify-end gap-3 lg:flex">
-          <ViewAsSelector persona={persona} setPersona={setPersona} />
-          <a className="header-ghost-button" href="/discover">
-            Discover
-          </a>
           <a className="header-ghost-button" href="/stay">
             View Stays
           </a>
@@ -120,7 +108,11 @@ export default function Header() {
           <ul className="flex flex-col gap-4 text-sm font-semibold">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <a className="header-nav-link" href={link.href} onClick={handleNavClick}>
+                <a
+                  className="header-nav-link"
+                  href={link.href}
+                  onClick={handleNavClick}
+                >
                   {link.label}
                 </a>
               </li>

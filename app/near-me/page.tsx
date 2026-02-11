@@ -21,9 +21,11 @@ type AttractionData = {
 };
 
 type RestaurantData = {
-  id: string;
+  id?: string;
+  slug?: string;
   name: string;
-  location: Location;
+  region?: string;
+  location?: Location;
   description?: string;
   vibe?: string;
   cuisine?: string;
@@ -40,6 +42,12 @@ type Place = {
 };
 
 type Filter = "all" | "restaurants" | "beaches" | "attractions";
+
+const REGION_COORDINATES: Record<string, Location> = {
+  "Northern End": { lat: 17.359, lng: -62.79 },
+  Central: { lat: 17.32, lng: -62.73 },
+  "Southern End": { lat: 17.27, lng: -62.69 },
+};
 
 export default function NearMePage() {
   const { permissionState, requestPermission } = useLocationPermission();
@@ -73,17 +81,29 @@ export default function NearMePage() {
             "Explore this nearby attraction.",
           type: "attraction" as const,
         })),
-        ...restaurantItems.map((restaurant) => ({
-          ...restaurant,
-          description:
-            restaurant.description ??
-            restaurant.vibe ??
-            "Enjoy a nearby dining option.",
-          type: "restaurant" as const,
-        })),
+        ...restaurantItems.map((restaurant) => {
+          const fallbackLocation = restaurant.region
+            ? REGION_COORDINATES[restaurant.region]
+            : undefined;
+
+          return {
+            ...restaurant,
+            id: restaurant.id ?? restaurant.slug ?? restaurant.name,
+            location: restaurant.location ?? fallbackLocation,
+            description:
+              restaurant.description ??
+              restaurant.vibe ??
+              "Enjoy a nearby dining option.",
+            type: "restaurant" as const,
+          };
+        }),
       ];
 
-      const sorted = sortByDistance(allPlaces, location) as Place[];
+      const placesWithCoordinates = allPlaces.filter(
+        (place): place is Place => Boolean(place.location)
+      );
+
+      const sorted = sortByDistance(placesWithCoordinates, location) as Place[];
       const nearby = sorted.filter(
         (place) => place.distance !== undefined && place.distance <= 10
       );
