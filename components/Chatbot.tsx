@@ -58,7 +58,7 @@ export default function Chatbot() {
         <div className="w-[340px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl">
           <div className="flex items-center justify-between bg-slate-900 px-4 py-3 text-white">
             <div>
-              <p className="text-sm font-semibold">Ask the St Kitts AI Helper</p>
+              <p className="text-sm font-semibold">Ask the St Kitts Travel Helper</p>
               <p className="text-xs text-slate-300">Mock responses • Phase 3</p>
             </div>
             <button
@@ -101,7 +101,7 @@ export default function Chatbot() {
                     />
                   ))}
                 </div>
-                AI is typing...
+                Assistant is typing...
               </div>
             )}
           </div>
@@ -149,7 +149,7 @@ export default function Chatbot() {
         onClick={() => setIsOpen((prev) => !prev)}
         type="button"
       >
-        {isOpen ? 'Hide Chat' : 'Chat with AI'}
+        {isOpen ? 'Hide Chat' : 'Ask Us Anything'}
         <span aria-hidden="true">💬</span>
       </button>
     </div>

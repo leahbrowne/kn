@@ -256,7 +256,7 @@ export default function PlanYourTripPage() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-10">
         <section className="rounded-[32px] bg-gradient-to-br from-slate-900 via-slate-900 to-primary p-10 text-white shadow-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-secondary">
-            Phase 3 Mock AI Trip Planner
+            Phase 3 Mock Trip Planner
           </p>
           <h1 className="mt-4 text-4xl font-semibold leading-tight">
             Plan your St Kitts escape with a conversational guide.
@@ -321,7 +321,7 @@ export default function PlanYourTripPage() {
               <div className="border-b border-slate-200 bg-slate-900 px-6 py-4 text-white">
                 <h2 className="text-lg font-semibold">Trip Planner Chat</h2>
                 <p className="text-sm text-slate-300">
-                  Mock AI • Responses update based on keywords
+                  Mock assistant • Responses update based on keywords
                   {tripPersona ? ` • Focus: ${activePersona.label}` : ''}
                 </p>
               </div>
@@ -444,7 +444,7 @@ export default function PlanYourTripPage() {
                         />
                       ))}
                     </div>
-                    AI is typing...
+                    Assistant is typing...
                   </div>
                 )}
               </div>
@@ -478,7 +478,7 @@ export default function PlanYourTripPage() {
           <aside className="flex flex-col gap-6">
             <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
               <h3 className="text-lg font-semibold text-slate-900">
-                What the AI listens for
+                What the assistant listens for
               </h3>
               <ul className="mt-3 space-y-2 text-sm text-slate-600">
                 <li>

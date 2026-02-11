@@ -119,7 +119,7 @@ const getPersonalizedContent = (profile, page) => {
 
 ---
 
-### 3. AI Conversational Trip Planner ⭐ PRIORITY FEATURE
+### 3. Assistant Conversational Trip Planner ⭐ PRIORITY FEATURE
 
 **Two Modes**:
 
@@ -132,31 +132,31 @@ Simple form with dropdowns:
 
 Output: Pre-built itinerary template
 
-#### Mode 2: AI-Powered Conversational Planner ⭐ SHOWCASE THIS
+#### Mode 2: Assistant-Powered Conversational Planner ⭐ SHOWCASE THIS
 Chat-style interface powered by Claude API (use Anthropic API).
 
 **Conversation Flow**:
 ```
-AI: "Hi! I'm your St Kitts travel guide. Let me help you create the perfect itinerary. 
+Assistant: "Hi! I'm your St Kitts travel guide. Let me help you create the perfect itinerary. 
      First, how many days will you be visiting?"
 
 User: "4 days"
 
-AI: "Great! 4 days gives us time to see the highlights. What brings you to St Kitts? 
+Assistant: "Great! 4 days gives us time to see the highlights. What brings you to St Kitts? 
      Are you looking for relaxation, adventure, cultural experiences, or a mix?"
 
 User: "I love food and history"
 
-AI: "Perfect! St Kitts has an amazing food scene and rich colonial history. I'll create 
+Assistant: "Perfect! St Kitts has an amazing food scene and rich colonial history. I'll create 
      an itinerary featuring historic sites and the best local restaurants. Would you 
      like to include any specific activities like snorkeling, hiking, or beach time?"
 
 User: "Some beach time but mostly interested in the food and historic sites"
 
-AI: [Generates personalized day-by-day itinerary]
+Assistant: [Generates personalized day-by-day itinerary]
 ```
 
-**AI Implementation** (Use Anthropic Claude API):
+**Assistant Implementation** (Use Anthropic Claude API):
 ```javascript
 // System prompt for Claude
 const systemPrompt = `You are a knowledgeable St Kitts tourism guide. 
@@ -229,7 +229,7 @@ const sendMessage = async (userMessage) => {
 
 ---
 
-### 4. AI-Powered Chatbot (Site-Wide Assistant)
+### 4. Assistant-Powered Chatbot (Site-Wide Assistant)
 
 **Purpose**: Answer questions about St Kitts tourism in real-time.
 
@@ -349,7 +349,7 @@ const mockInsights = {
 
 ### 6. Structured Data & SEO Optimization ⭐ KEY DIFFERENTIATOR
 
-**Goal**: Make St Kitts the easiest destination to discover via Google and AI search.
+**Goal**: Make St Kitts the easiest destination to discover via Google and Assistant search.
 
 **Schema Types to Implement**:
 
@@ -431,7 +431,7 @@ const mockInsights = {
 **Add a section on demo site**: `/seo-preview` that shows:
 - How a page would appear in Google search results
 - How the structured data would appear in Google Travel
-- Example of how AI assistants would cite the information
+- Example of how Assistant assistants would cite the information
 
 ---
 
@@ -826,9 +826,9 @@ const useItinerary = () => {
 **Core Features**:
 - [ ] Personalization engine (4 visitor types)
 - [ ] "View As" toggle for demo purposes
-- [ ] AI Trip Planner (conversational mode with Claude API)
+- [ ] Assistant Trip Planner (conversational mode with Claude API)
 - [ ] Form-based quick planner (fallback)
-- [ ] AI Chatbot (site-wide)
+- [ ] Assistant Chatbot (site-wide)
 - [ ] Interactive map (Mapbox)
 - [ ] Save itineraries (localStorage)
 - [ ] Insights dashboard (admin route)
@@ -898,9 +898,9 @@ On first visit, offer a guided tour:
 
 ## Content Generation Guidelines
 
-### AI-Generated Content Notes
+### Assistant-Generated Content Notes
 
-**For this demo**, content can be AI-generated but should be:
+**For this demo**, content can be Assistant-generated but should be:
 - Realistic and factually accurate for St Kitts
 - Professionally written (tourism copywriting style)
 - Diverse in tone (inspirational for some, practical for others)
@@ -1000,7 +1000,7 @@ This demo should prove:
    - Installable as app
 
 2. **Innovation**
-   - AI trip planning no competitor has
+   - Assistant trip planning no competitor has
    - Personalization that adapts to visitors
    - First-party data insights
 
@@ -1010,7 +1010,7 @@ This demo should prove:
    - Conversion-focused design
 
 4. **Competitive Differentiation**
-   - Only vendor with working AI features
+   - Only vendor with working Assistant features
    - Only vendor showing structured data strategy
    - Only vendor with full PWA implementation
 
@@ -1025,8 +1025,8 @@ This demo should prove:
 - Core Pages & Routing: 8 hours
 - Data Models & Content: 6 hours
 - Personalization Engine: 6 hours
-- AI Trip Planner: 10 hours
-- AI Chatbot: 6 hours
+- Assistant Trip Planner: 10 hours
+- Assistant Chatbot: 6 hours
 - Interactive Map: 4 hours
 - Insights Dashboard: 6 hours
 - SEO & Structured Data: 4 hours
@@ -1043,7 +1043,7 @@ If time is limited, build in this order:
 
 **Phase 1 (Must Have)**:
 1. Homepage with personalization
-2. Trip planner (AI mode)
+2. Trip planner (Assistant mode)
 3. Attractions listing + detail pages
 4. Basic chatbot
 
@@ -1066,7 +1066,7 @@ If time is limited, build in this order:
 Before starting, confirm:
 
 1. **API Keys**: Do you have Anthropic API key and Mapbox token?
-2. **Content**: Should we scrape existing St Kitts site for real content, or use AI-generated?
+2. **Content**: Should we scrape existing St Kitts site for real content, or use Assistant-generated?
 3. **Branding**: Do we have access to official St Kitts Tourism logo/brand assets?
 4. **Timeline**: When is the demo needed?
 5. **Scope**: Any features above we should deprioritize?
@@ -1098,7 +1098,7 @@ Before starting, confirm:
 
 This demo should **wow** the stakeholders by showing them:
 1. A working prototype, not just mockups
-2. Features competitors won't have (AI trip planner, personalization)
+2. Features competitors won't have (Assistant trip planner, personalization)
 3. Strategic value (insights dashboard, structured data)
 4. Modern tech done right (PWA, fast, accessible)
 

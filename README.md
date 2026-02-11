@@ -15,4 +15,4 @@ will deploy the static site automatically.
 ## Next Steps
 
 - Replace the static shell with the planned Next.js 14 App Router build.
-- Add PWA support, personalization, and AI-powered trip planning.
+- Add PWA support, personalization, and assistant-powered trip planning.
