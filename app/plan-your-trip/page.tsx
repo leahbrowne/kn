@@ -321,7 +321,7 @@ export default function PlanYourTripPage() {
               <div className="border-b border-slate-200 bg-slate-900 px-6 py-4 text-white">
                 <h2 className="text-lg font-semibold">Trip Planner Chat</h2>
                 <p className="text-sm text-slate-300">
-                  Responses update based on keywords
+                  Mock assistant • Responses update based on keywords
                   {tripPersona ? ` • Focus: ${activePersona.label}` : ''}
                 </p>
               </div>
@@ -444,7 +444,7 @@ export default function PlanYourTripPage() {
                         />
                       ))}
                     </div>
-                    Guide is typing...
+                    Assistant is typing...
                   </div>
                 )}
               </div>
@@ -478,7 +478,7 @@ export default function PlanYourTripPage() {
           <aside className="flex flex-col gap-6">
             <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
               <h3 className="text-lg font-semibold text-slate-900">
-                What the guide listens for
+                What the assistant listens for
               </h3>
               <ul className="mt-3 space-y-2 text-sm text-slate-600">
                 <li>

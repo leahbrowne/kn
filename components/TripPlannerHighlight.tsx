@@ -12,7 +12,7 @@ export default function TripPlannerHighlight() {
             Trip Planner
           </p>
           <h2 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-            Plan your trip in seconds
+            Plan your trip in seconds with our assistant
           </h2>
           <p className="max-w-xl text-lg text-white/75 sm:text-xl">
             Tell us what you love. We&apos;ll build the perfect itinerary.

@@ -70,11 +70,6 @@ export default function Header() {
                   </a>
                 </li>
               ))}
-              <li>
-                <button className="header-nav-link" onClick={handleInstall} type="button">
-                  Install App
-                </button>
-              </li>
             </ul>
           </nav>
         </div>
@@ -97,18 +92,6 @@ export default function Header() {
                 </a>
               </li>
             ))}
-            <li>
-              <button
-                className="header-nav-link"
-                onClick={() => {
-                  handleInstall();
-                  handleNavClick();
-                }}
-                type="button"
-              >
-                Install App
-              </button>
-            </li>
           </ul>
         </nav>
       </div>
