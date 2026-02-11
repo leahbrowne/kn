@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import OfflineIndicator from "../components/OfflineIndicator";
 import { PersonalisationProvider } from "../context/PersonalisationContext";
 import Header from "./Header";
+import MobileInstallBanner from "./MobileInstallBanner";
 
 export const metadata = {
   title: "St Kitts Tourism",
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <OfflineIndicator />
             <main className="flex-1">{children}</main>
             <Footer />
+            <MobileInstallBanner />
           </div>
           <Chatbot />
         </PersonalisationProvider>

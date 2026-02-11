@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-import { useInstallPrompt } from "../lib/hooks/useInstallPrompt";
-
 const navLinks = [
   { label: "Explore", href: "/things-to-do" },
   { label: "Eat & Drink", href: "/things-to-do/restaurants" },
@@ -15,7 +13,6 @@ const navLinks = [
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { promptInstall } = useInstallPrompt();
 
   const handleNavClick = () => setIsMenuOpen(false);
 
@@ -28,13 +25,6 @@ export default function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const handleInstall = async () => {
-    const result = await promptInstall();
-    if (result?.outcome === "ios") {
-      window.alert(result.message);
-    }
-  };
 
   return (
     <header className={`site-header ${isScrolled ? "header-solid" : ""}`}>
