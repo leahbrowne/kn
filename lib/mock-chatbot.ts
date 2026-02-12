@@ -1,9 +1,5 @@
 export const MOCK_CONCIERGE_RESPONSES = {
-  greeting: [
-    'Hi there. Welcome to St Kitts 🌴',
-    'I’m your friendly local guide. I can help with beaches, food, and trip ideas.',
-    'What would you like to explore first?',
-  ],
+  greeting: ['Hi, I’m your St Kitts concierge. How can I help you explore the island today?'],
 
   beaches: [
     'For relaxing? Try Cockleshell or South Friars. Calm water and fewer crowds.',
@@ -90,7 +86,7 @@ export function getMockReply(input: string) {
     return 'How many days are you staying? I can sketch a simple beach-and-food plan for you.';
   }
 
-  return 'I’m the demo St Kitts travel assistant. Ask about beaches, food, or planning and I’ll guide you.';
+  return 'How can I help you explore St Kitts?';
 }
 
 export const chatbotQuickActions = [
