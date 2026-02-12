@@ -1,5 +1,5 @@
 export const MOCK_CONCIERGE_RESPONSES = {
-  greeting: ['Hi, I’m your St Kitts concierge. How can I help you explore the island today?'],
+  greeting: ['Hi there. I’m your Island Concierge.\nHow can I help you explore St Kitts today?'],
 
   beaches: [
     'For relaxing? Try Cockleshell or South Friars. Calm water and fewer crowds.',
