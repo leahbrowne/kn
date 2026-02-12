@@ -20,7 +20,7 @@ export default function Chatbot() {
       id: 'welcome',
       role: 'assistant',
       content:
-        'Hi! I’m your St Kitts travel helper. Ask me anything or tap a quick action below.',
+        'Hi, I’m your St Kitts concierge. How can I help you explore the island today?',
     },
   ]);
   const [isTyping, setIsTyping] = useState(false);
@@ -129,7 +129,7 @@ export default function Chatbot() {
               <input
                 className="flex-1 rounded-full border border-slate-200 px-3 py-2 text-sm focus:border-primary focus:outline-none"
                 onChange={(event) => setInput(event.target.value)}
-                placeholder="Ask about visas, beaches, food..."
+                placeholder="How can I help you explore St Kitts?"
                 type="text"
                 value={input}
               />
