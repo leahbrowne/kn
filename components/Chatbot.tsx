@@ -20,7 +20,7 @@ export default function Chatbot() {
       id: 'welcome',
       role: 'assistant',
       content:
-        'Hi, I’m your St Kitts concierge. How can I help you explore the island today?',
+        'Hi there. I’m your Island Concierge.\nHow can I help you explore St Kitts today?',
     },
   ]);
   const [isTyping, setIsTyping] = useState(false);
@@ -58,8 +58,8 @@ export default function Chatbot() {
         <div className="w-[340px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl">
           <div className="flex items-center justify-between bg-slate-900 px-4 py-3 text-white">
             <div>
-              <p className="text-sm font-semibold">Ask the St Kitts Travel Helper</p>
-              <p className="text-xs text-slate-300">Mock responses • Phase 3</p>
+              <p className="text-sm font-semibold">Island Concierge</p>
+              <p className="text-xs text-slate-300">Demo mode • Sample responses</p>
             </div>
             <button
               className="button-link text-xs text-slate-300 hover:text-white"
@@ -129,7 +129,7 @@ export default function Chatbot() {
               <input
                 className="flex-1 rounded-full border border-slate-200 px-3 py-2 text-sm focus:border-primary focus:outline-none"
                 onChange={(event) => setInput(event.target.value)}
-                placeholder="How can I help you explore St Kitts?"
+                placeholder="Ask about beaches, food, stays, or trip ideas…"
                 type="text"
                 value={input}
               />
