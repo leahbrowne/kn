@@ -149,7 +149,7 @@ export default function Chatbot() {
         onClick={() => setIsOpen((prev) => !prev)}
         type="button"
       >
-        {isOpen ? 'Hide Chat' : 'Ask Us Anything'}
+        {isOpen ? 'Hide Chat' : 'Island Concierge'}
         <span aria-hidden="true">💬</span>
       </button>
     </div>
