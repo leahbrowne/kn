@@ -56,7 +56,7 @@ export default function Chatbot() {
     <div className="fixed bottom-24 right-6 z-50 flex flex-col items-end gap-3 sm:bottom-6">
       {isOpen && (
         <div className="w-[340px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl">
-          <div className="flex items-center justify-between bg-slate-900 px-4 py-3 text-white">
+          <div className="flex items-center justify-between bg-[#414421] px-4 py-3 text-white">
             <div>
               <p className="text-sm font-semibold">Island Concierge</p>
               <p className="text-xs text-slate-300">Demo mode • Sample responses</p>
@@ -81,7 +81,7 @@ export default function Chatbot() {
                 <div
                   className={`max-w-[80%] rounded-2xl px-3 py-2 text-sm shadow-sm ${
                     message.role === 'user'
-                      ? 'bg-primary text-white'
+                      ? 'bg-[#414421] text-white'
                       : 'bg-slate-100 text-slate-800'
                   }`}
                 >
@@ -111,7 +111,7 @@ export default function Chatbot() {
               {quickActions.map((action) => (
                 <button
                   key={action.label}
-                  className="button-base button-secondary px-3 text-xs font-semibold"
+                  className="button-base rounded-full border-[#414421]/40 bg-transparent px-3 text-xs font-semibold text-[#414421] hover:border-[#414421] hover:bg-[#414421]/10"
                   onClick={() => handleSend(action.prompt)}
                   type="button"
                 >
@@ -127,14 +127,14 @@ export default function Chatbot() {
               }}
             >
               <input
-                className="flex-1 rounded-full border border-slate-200 px-3 py-2 text-sm focus:border-primary focus:outline-none"
+                className="flex-1 rounded-full border border-slate-200 px-3 py-2 text-sm focus:border-[#414421] focus:outline-none"
                 onChange={(event) => setInput(event.target.value)}
                 placeholder="Ask about beaches, food, stays, or trip ideas…"
                 type="text"
                 value={input}
               />
               <button
-                className="button-base button-primary px-4 text-sm"
+                className="button-base border-[#414421] bg-[#414421] px-4 text-sm text-white hover:bg-[#36381b]"
                 type="submit"
               >
                 Send
@@ -145,7 +145,7 @@ export default function Chatbot() {
       )}
 
       <button
-        className="button-base button-primary gap-2 px-5 text-sm"
+        className="button-base gap-2 border-[#414421] bg-[#414421] px-5 text-sm text-white hover:bg-[#36381b]"
         onClick={() => setIsOpen((prev) => !prev)}
         type="button"
       >
