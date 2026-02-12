@@ -15,6 +15,13 @@ export const MOCK_CONCIERGE_RESPONSES = {
     'I can suggest beach bars, seafood spots, or date-night restaurants. What’s your vibe?',
   ],
 
+  stay: [
+    'Beachfront resorts',
+    'Boutique hotels',
+    'Budget stays',
+    'Family friendly options',
+  ],
+
   planning: ['Happy to help plan your trip.', 'How many days are you visiting?'],
 
   itinerary: [
@@ -55,6 +62,9 @@ const profanityRegex =
 export function getMockReply(input: string) {
   const text = input.toLowerCase().trim();
 
+  const pick = (responses: readonly string[]) =>
+    responses[Math.floor(Math.random() * responses.length)];
+
   if (profanityRegex.test(text)) {
     return 'I’m here to help 😊 If something’s frustrating, tell me what you need and I’ll do my best to guide you.';
   }
@@ -67,6 +77,15 @@ export function getMockReply(input: string) {
     return 'Craving local seafood, Caribbean flavours, or something upscale? Tell me your vibe.';
   }
 
+  if (
+    text.includes('stay') ||
+    text.includes('hotel') ||
+    text.includes('resort') ||
+    text.includes('accommodation')
+  ) {
+    return pick(MOCK_CONCIERGE_RESPONSES.stay);
+  }
+
   if (text.includes('plan') || text.includes('itinerary')) {
     return 'How many days are you staying? I can sketch a simple beach-and-food plan for you.';
   }
@@ -75,9 +94,9 @@ export function getMockReply(input: string) {
 }
 
 export const chatbotQuickActions = [
-  { label: 'Greeting', prompt: 'Hi there!' },
   { label: 'Beaches', prompt: 'What are the best beaches in St Kitts?' },
   { label: 'Restaurants', prompt: 'Where should I eat in St Kitts?' },
+  { label: 'Stay', prompt: 'Where should I stay in St Kitts?' },
   { label: 'Trip Planning', prompt: 'Can you help me plan a 3-day trip?' },
 ];
 
